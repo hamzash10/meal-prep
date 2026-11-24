@@ -4,7 +4,7 @@
 // and an unchanged one never is. In the installed app the page asks for all of them once ('warm').
 // Every file is checked against the hash it should have before it is kept, so a copy that is still
 // stale somewhere on the way (a cache, the CDN right after a change) is never stored as the new one.
-const VERSION = '98042dd390e6';
+const VERSION = '29803bdcc9e2';
 const CORE = {
 "index.html": "b2becde017",
 "data.js": "ec85c75705",
@@ -176,10 +176,11 @@ async function picture(path) {
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET' || !req.url.startsWith(SCOPE)) return;
-  if (req.mode === 'navigate') { e.respondWith(fromCore('index.html', req)); return; }
   const path = rel(req.url);
   if (IMGS[path]) { e.respondWith(picture(path)); return; }
-  if (CORE[path]) e.respondWith(fromCore(path, req));
+  if (CORE[path] && path !== 'index.html') { e.respondWith(fromCore(path, req)); return; }
+  // opening the book itself (any address in it that is not a file) gets the stored page
+  if (req.mode === 'navigate' && (path === 'index.html' || !/\.[a-z0-9]+$/i.test(path))) e.respondWith(fromCore('index.html', req));
 });
 
 let warming = null;

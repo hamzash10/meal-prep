@@ -649,7 +649,7 @@ th,td{text-align:right}
   SAU.forEach(function (s) { bySauce[s.id] = s; s._recipes = []; });
   R.forEach(function (r) { (r.sauces || []).forEach(function (id) { if (bySauce[id]) bySauce[id]._recipes.push(r); }); });
   var CATS = [['all', 'الكل'], ['chicken', 'دجاج'], ['beef', 'لحم بقر'], ['salmon', 'سلمون'], ['tuna', 'تونة'], ['more', 'أخرى']];
-  var MORE = { 'turkey-taco-lettuce-cups': 'ديك رومي', 'spicy-tomato-fish-couscous': 'سمك أبيض', 'lemon-cod-white-beans': 'سمك أبيض', 'spiced-fish-taco-bowl': 'سمك أبيض', 'vegetable-frittata-squares': 'بيض', 'red-lentil-spinach-dal': 'عدس', 'lentil-roasted-vegetable-salad': 'عدس', 'mezze-protein-box': 'بيض', 'shakshuka': 'بيض', 'turkey-feta-burger': 'ديك رومي', 'fish-and-chips': 'سمك أبيض' };
+  var MORE = { 'turkey-taco-lettuce-cups': 'ديك رومي', 'spicy-tomato-fish-couscous': 'سمك أبيض', 'lemon-cod-white-beans': 'سمك أبيض', 'spiced-fish-taco-bowl': 'سمك أبيض', 'vegetable-frittata-squares': 'بيض', 'red-lentil-spinach-dal': 'عدس', 'lentil-roasted-vegetable-salad': 'عدس', 'mezze-protein-box': 'بيض', 'shakshuka': 'بيض', 'turkey-feta-burger': 'ديك رومي', 'fish-and-chips': 'سمك أبيض', 'thai-basil-turkey': 'ديك رومي' };
   var CATNAME = { chicken: 'دجاج', beef: 'لحم بقر', salmon: 'سلمون', tuna: 'تونة' };
   var LEVEL = ['', 'سهل جدًا', 'سهل', 'متوسط', 'متقدّم', 'مشروع'];
   var LEVELWHAT = ['', 'طبخ قليل أو بلا طبخ. اخلط وعبّئ.', 'مقلاة واحدة أو صينية واحدة وقليل من التقطيع.', 'شيئان على النار معًا، أو صلصة تحضّرها.', 'عدة مراحل: تشكيل أو حشو أو تبريد.', 'طبخة لعطلة نهاية الأسبوع فيها طبقات وتوقيت.'];

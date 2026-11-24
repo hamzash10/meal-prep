@@ -68,5 +68,13 @@ window.PREP_CREDITS = {
  "salmon-sushi-bake": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
  "tuna-onigirazu": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
  "turkey-feta-burger": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
- "fish-and-chips": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)"
+ "fish-and-chips": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
+ "hot-honey-chicken-tenders": "صورة مؤقتة، والرسمة قادمة",
+ "marry-me-chicken-pasta": "صورة مؤقتة، والرسمة قادمة",
+ "orange-chicken-broccoli": "صورة مؤقتة، والرسمة قادمة",
+ "chicken-loaded-fries": "صورة مؤقتة، والرسمة قادمة",
+ "crispy-chilli-beef": "صورة مؤقتة، والرسمة قادمة",
+ "turkish-pasta-beef": "صورة مؤقتة، والرسمة قادمة",
+ "philly-cheesesteak-pita": "صورة مؤقتة، والرسمة قادمة",
+ "thai-basil-turkey": "صورة مؤقتة، والرسمة قادمة"
 };

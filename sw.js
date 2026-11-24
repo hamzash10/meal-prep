@@ -4,7 +4,7 @@
 // and an unchanged one never is. In the installed app the page asks for all of them once ('warm').
 // Every file is checked against the hash it should have before it is kept, so a copy that is still
 // stale somewhere on the way (a cache, the CDN right after a change) is never stored as the new one.
-const VERSION = 'a37ac655b315';
+const VERSION = 'cddc38a0e27a';
 const CORE = {
 "index.html": "57bac551f6",
 "data.js": "ec85c75705",
@@ -59,7 +59,7 @@ const IMGS = {
 "img/lemon-dill-salmon-potatoes.webp": "f0d38882c4",
 "img/lemon-herb-chicken-quinoa.webp": "fd066bb525",
 "img/lemony-tuna-pasta-salad.webp": "09343bec30",
-"img/lentil-roasted-vegetable-salad.webp": "9a12ce1855",
+"img/lentil-roasted-vegetable-salad.webp": "3189d777f7",
 "img/mediterranean-salmon-traybake.webp": "94bbfe6e2a",
 "img/mezze-protein-box.webp": "65b74b923f",
 "img/peri-peri-chicken-rice.webp": "4f60f25733",
@@ -95,7 +95,7 @@ const IMGS = {
 "img/sauce-toum.webp": "e4bc3588c9",
 "img/sesame-ginger-chicken-noodles.webp": "c1a67a2460",
 "img/sesame-tuna-soba-salad.webp": "afb40ad810",
-"img/shakshuka.webp": "a2ab50e26b",
+"img/shakshuka.webp": "4ff6e6bed4",
 "img/shawarma-chicken-bowl.webp": "6a41ffe174",
 "img/shish-tawook.webp": "5ab19996fb",
 "img/soy-ginger-glazed-chicken.webp": "ade5221722",
@@ -110,7 +110,7 @@ const IMGS = {
 "img/tuna-sweet-potato-cakes.webp": "f4018d3d87",
 "img/tuna-white-bean-salad.webp": "0326d065c5",
 "img/turkey-taco-lettuce-cups.webp": "5d289e8ba3",
-"img/vegetable-frittata-squares.webp": "9f2b01d1ae",
+"img/vegetable-frittata-squares.webp": "c128660f81",
 "img/zaatar-chicken-cauliflower.webp": "a171c456ad"
 };
 const CORE_CACHE = 'prepbook-core-' + VERSION;

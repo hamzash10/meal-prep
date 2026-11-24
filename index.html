@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>كتاب تحضير غداء العمل</title>
+<title>Meal Prep</title>
 <meta name="description" content="وصفات غداء للعمل غنية بالبروتين: اطبخ مرة واحدة وتغدَّ طوال الأسبوع.">
 <meta name="robots" content="noindex">
 <meta name="format-detection" content="telephone=no">
@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="تحضير الغداء">
+<meta name="apple-mobile-web-app-title" content="Meal Prep">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -1104,7 +1104,7 @@ th,td{text-align:right}
     openId = id; openKind = kind;
     $('sheet-in').innerHTML = html;
     $('sheet').hidden = false; $('sheet').scrollTop = 0; document.documentElement.style.overflow = 'hidden';
-    document.title = title + ' · كتاب تحضير غداء العمل';
+    document.title = title + ' · Meal Prep';
     var c = $('s-close'); if (c) c.focus({ preventScroll: true });
   }
   function openRecipe(id) { var r = byId[id]; if (!r) return; showSheet('recipe', id, sheetHtml(r), r.name); renderScaled(r); }
@@ -1113,7 +1113,7 @@ th,td{text-align:right}
     if (!openId) return;
     flushNote(); openId = null; openKind = null;
     $('sheet').hidden = true; $('sheet-in').innerHTML = ''; document.documentElement.style.overflow = '';
-    document.title = 'كتاب تحضير غداء العمل';
+    document.title = 'Meal Prep';
     if (lastFocus && lastFocus.focus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
   }
   function toast(msg) { var t = $('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(function () { t.hidden = true; }, 2200); }

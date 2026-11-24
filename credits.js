@@ -69,12 +69,12 @@ window.PREP_CREDITS = {
  "tuna-onigirazu": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
  "turkey-feta-burger": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
  "fish-and-chips": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
- "hot-honey-chicken-tenders": "صورة مؤقتة، والرسمة قادمة",
- "marry-me-chicken-pasta": "صورة مؤقتة، والرسمة قادمة",
- "orange-chicken-broccoli": "صورة مؤقتة، والرسمة قادمة",
- "chicken-loaded-fries": "صورة مؤقتة، والرسمة قادمة",
- "crispy-chilli-beef": "صورة مؤقتة، والرسمة قادمة",
- "turkish-pasta-beef": "صورة مؤقتة، والرسمة قادمة",
- "philly-cheesesteak-pita": "صورة مؤقتة، والرسمة قادمة",
- "thai-basil-turkey": "صورة مؤقتة، والرسمة قادمة"
+ "hot-honey-chicken-tenders": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
+ "marry-me-chicken-pasta": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
+ "orange-chicken-broccoli": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
+ "chicken-loaded-fries": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
+ "crispy-chilli-beef": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
+ "turkish-pasta-beef": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
+ "philly-cheesesteak-pita": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
+ "thai-basil-turkey": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)"
 };

@@ -4,7 +4,7 @@
 // and an unchanged one never is. In the installed app the page asks for all of them once ('warm').
 // Every file is checked against the hash it should have before it is kept, so a copy that is still
 // stale somewhere on the way (a cache, the CDN right after a change) is never stored as the new one.
-const VERSION = 'cddc38a0e27a';
+const VERSION = 'd3d6c9736d05';
 const CORE = {
 "index.html": "57bac551f6",
 "data.js": "ec85c75705",
@@ -110,7 +110,7 @@ const IMGS = {
 "img/tuna-sweet-potato-cakes.webp": "f4018d3d87",
 "img/tuna-white-bean-salad.webp": "0326d065c5",
 "img/turkey-taco-lettuce-cups.webp": "5d289e8ba3",
-"img/vegetable-frittata-squares.webp": "c128660f81",
+"img/vegetable-frittata-squares.webp": "bb10c0e3a9",
 "img/zaatar-chicken-cauliflower.webp": "a171c456ad"
 };
 const CORE_CACHE = 'prepbook-core-' + VERSION;

@@ -4,11 +4,11 @@
 // and an unchanged one never is. In the installed app the page asks for all of them once ('warm').
 // Every file is checked against the hash it should have before it is kept, so a copy that is still
 // stale somewhere on the way (a cache, the CDN right after a change) is never stored as the new one.
-const VERSION = '4c0d8acd11ca';
+const VERSION = '63104b495c2a';
 const CORE = {
-"index.html": "206b784a9f",
-"data.js": "c6c37bb11b",
-"credits.js": "599cab4b02",
+"index.html": "47d08260d5",
+"data.js": "0b23b8ad26",
+"credits.js": "e0ff83989b",
 "manifest.webmanifest": "c4e202738e",
 "icons/favicon-32.png": "f1b949d692",
 "icons/icon-192.png": "0dd8b9f44d",
@@ -31,6 +31,7 @@ const IMGS = {
 "img/beef-aubergine-bake.webp": "30230caedd",
 "img/beef-bean-chili.webp": "249767d4a9",
 "img/beef-broccoli-rice.webp": "fd233d8346",
+"img/beef-kimbap.webp": "5b096d0a10",
 "img/beef-kofta-bulgur-box.webp": "1006294f83",
 "img/beef-lasagna.webp": "7d5eb19ae0",
 "img/beef-lentil-bolognese.webp": "a5a3c8cd1b",
@@ -45,10 +46,12 @@ const IMGS = {
 "img/chicken-fajita-bowl.webp": "13799477f6",
 "img/chicken-fried-rice.webp": "fcafb702f8",
 "img/chicken-kabsa.webp": "54745a7bfb",
+"img/chicken-katsu-curry.webp": "b994807ef3",
 "img/chicken-meatballs-tomato-orzo.webp": "84ac3c646f",
 "img/chicken-salad-wraps.webp": "dd58498e48",
 "img/chicken-souvlaki-box.webp": "8cb080d288",
 "img/chicken-tikka-raita.webp": "70737915f9",
+"img/fish-and-chips.webp": "8b686f8ba5",
 "img/harissa-chicken-traybake.webp": "24e4be35bb",
 "img/harissa-salmon-couscous.webp": "cee4195026",
 "img/honey-garlic-salmon-rice.webp": "7edf7cb9ed",
@@ -65,9 +68,11 @@ const IMGS = {
 "img/peri-peri-chicken-rice.webp": "4f60f25733",
 "img/pulled-chicken-burrito-bowl.webp": "709dfc3800",
 "img/red-lentil-spinach-dal.webp": "520d015aac",
+"img/salmon-burger-dill.webp": "f66f31af54",
 "img/salmon-cakes-dill-yogurt.webp": "f7df5e6a89",
 "img/salmon-lemon-pea-pasta.webp": "ba4de8f405",
 "img/salmon-rice-bowl.webp": "35429849cc",
+"img/salmon-sushi-bake.webp": "5f4fa232e9",
 "img/sauce-amba.webp": "feca6f9a7f",
 "img/sauce-bbq.webp": "767544dcca",
 "img/sauce-buffalo.webp": "ef5f184a6d",
@@ -98,6 +103,7 @@ const IMGS = {
 "img/shakshuka.webp": "4ff6e6bed4",
 "img/shawarma-chicken-bowl.webp": "6a41ffe174",
 "img/shish-tawook.webp": "5ab19996fb",
+"img/smash-burger-tacos.webp": "ae3b82d239",
 "img/soy-ginger-glazed-chicken.webp": "ade5221722",
 "img/soy-sesame-beef-bowl.webp": "bb726f5b96",
 "img/spiced-fish-taco-bowl.webp": "83c3b09cf0",
@@ -106,12 +112,15 @@ const IMGS = {
 "img/steak-sweet-potato-chimichurri.webp": "c1ad9a8cbf",
 "img/tomato-coconut-chicken-curry.webp": "b2fd7118bb",
 "img/tuna-nicoise-box.webp": "13998fc13a",
+"img/tuna-onigirazu.webp": "71bcdf2d0f",
 "img/tuna-stuffed-sweet-potato.webp": "9a3c9ee178",
 "img/tuna-sweet-potato-cakes.webp": "f4018d3d87",
 "img/tuna-white-bean-salad.webp": "0326d065c5",
+"img/turkey-feta-burger.webp": "34a017af6c",
 "img/turkey-taco-lettuce-cups.webp": "5d289e8ba3",
 "img/vegetable-frittata-squares.webp": "bb10c0e3a9",
-"img/zaatar-chicken-cauliflower.webp": "a171c456ad"
+"img/zaatar-chicken-cauliflower.webp": "a171c456ad",
+"img/zinger-chicken-wrap.webp": "5e636acc40"
 };
 const CORE_CACHE = 'prepbook-core-' + VERSION;
 const IMG_CACHE = 'prepbook-img';

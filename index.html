@@ -611,7 +611,7 @@ th,td{text-align:right}
         <li><b>الخردل.</b> بعض خردل ديجون يُصنع بالنبيذ الأبيض. الخردل الأصفر العادي هو الخيار الأبسط.</li>
         <li><b>الهريسة وصلصة الفلفل الحار والصلصة الحارة.</b> لا مشكلة فيها غالبًا. ابحث عن علامة حلال.</li>
         <li><b>المرق.</b> مرق الخضار يبسّط الأمر. افحص مكعبات المرق بحثًا عن علامة حلال.</li>
-        <li><b>الفيتا والموزاريلا والكوتج.</b> بعضها يُصنع بمنفحة حيوانية. ابحث عن علامة حلال أو علامة نباتي.</li>
+        <li><b>الفيتا والموزاريلا والكوتج والشيدر والبارميزان.</b> بعضها يُصنع بمنفحة حيوانية، والبارميزان الإيطالي الأصلي دائمًا كذلك. ابحث عن علامة حلال أو علامة نباتي.</li>
       </ul>
     </section>
 
@@ -649,7 +649,7 @@ th,td{text-align:right}
   SAU.forEach(function (s) { bySauce[s.id] = s; s._recipes = []; });
   R.forEach(function (r) { (r.sauces || []).forEach(function (id) { if (bySauce[id]) bySauce[id]._recipes.push(r); }); });
   var CATS = [['all', 'الكل'], ['chicken', 'دجاج'], ['beef', 'لحم بقر'], ['salmon', 'سلمون'], ['tuna', 'تونة'], ['more', 'أخرى']];
-  var MORE = { 'turkey-taco-lettuce-cups': 'ديك رومي', 'spicy-tomato-fish-couscous': 'سمك أبيض', 'lemon-cod-white-beans': 'سمك أبيض', 'spiced-fish-taco-bowl': 'سمك أبيض', 'vegetable-frittata-squares': 'بيض', 'red-lentil-spinach-dal': 'عدس', 'lentil-roasted-vegetable-salad': 'عدس', 'mezze-protein-box': 'بيض', 'shakshuka': 'بيض' };
+  var MORE = { 'turkey-taco-lettuce-cups': 'ديك رومي', 'spicy-tomato-fish-couscous': 'سمك أبيض', 'lemon-cod-white-beans': 'سمك أبيض', 'spiced-fish-taco-bowl': 'سمك أبيض', 'vegetable-frittata-squares': 'بيض', 'red-lentil-spinach-dal': 'عدس', 'lentil-roasted-vegetable-salad': 'عدس', 'mezze-protein-box': 'بيض', 'shakshuka': 'بيض', 'turkey-feta-burger': 'ديك رومي', 'fish-and-chips': 'سمك أبيض' };
   var CATNAME = { chicken: 'دجاج', beef: 'لحم بقر', salmon: 'سلمون', tuna: 'تونة' };
   var LEVEL = ['', 'سهل جدًا', 'سهل', 'متوسط', 'متقدّم', 'مشروع'];
   var LEVELWHAT = ['', 'طبخ قليل أو بلا طبخ. اخلط وعبّئ.', 'مقلاة واحدة أو صينية واحدة وقليل من التقطيع.', 'شيئان على النار معًا، أو صلصة تحضّرها.', 'عدة مراحل: تشكيل أو حشو أو تبريد.', 'طبخة لعطلة نهاية الأسبوع فيها طبقات وتوقيت.'];

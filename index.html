@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كتاب تحضير غداء العمل</title>
+<meta name="description" content="وصفات غداء للعمل غنية بالبروتين: اطبخ مرة واحدة وتغدَّ طوال الأسبوع.">
+<meta name="robots" content="noindex">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#F2F1EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101317" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="تحضير الغداء">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{
+  /* layout: poster-type header, then a two-up picture index on phones (three and four up on wider screens); a recipe opens as a full sheet.
+     Colour comes from the dish pictures. The page stays paper and ink, with kitchen-tape blue for actions and a five-step heat ramp for difficulty. */
+  --paper:#F2F1EC; --card:#FFFFFF; --soft:#E8E6DE; --line:#D9D6CC;
+  --ink:#16181C; --ink-2:#555B65;
+  --accent:#1D5BCB; --accent-ink:#FFFFFF; --tape:#57A2EE; --tape-ink:#0B1A2C;
+  --l1:#2E9E62; --l2:#86B32C; --l3:#EBA916; --l4:#EA7620; --l5:#D5332B;
+  --font-display:"Lalezar","Anton","Arial Narrow",Impact,sans-serif;
+  --font-body:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101317; --card:#1A1E24; --soft:#222730; --line:#2C323B;
+    --ink:#F1EFE9; --ink-2:#A3A9B3;
+    --accent:#7DB1FF; --accent-ink:#0A1628; --tape:#57A2EE; --tape-ink:#0B1A2C;
+    --l1:#49C182; --l2:#A7D147; --l3:#F5BE3B; --l4:#F59045; --l5:#F0584F;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101317; --card:#1A1E24; --soft:#222730; --line:#2C323B;
+  --ink:#F1EFE9; --ink-2:#A3A9B3;
+  --accent:#7DB1FF; --accent-ink:#0A1628; --tape:#57A2EE; --tape-ink:#0B1A2C;
+  --l1:#49C182; --l2:#A7D147; --l3:#F5BE3B; --l4:#F59045; --l5:#F0584F;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--font-body)}
+img{max-width:100%;height:auto;display:block}
+button,input,select{font:inherit;color:inherit}
+a{color:inherit}
+h1,h2,h3,h4{text-wrap:balance}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+main{overflow-x:clip}
+.disp{font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.012em}
+.tape{display:inline-block;background:var(--tape);color:var(--tape-ink);font:400 13px/1 var(--font-display);letter-spacing:.09em;text-transform:uppercase;padding:7px 12px 6px;transform:rotate(-1.6deg);
+  clip-path:polygon(0 0,100% 0,calc(100% - 3px) 20%,100% 40%,calc(100% - 3px) 60%,100% 80%,calc(100% - 2px) 100%,0 100%,3px 80%,0 60%,3px 40%,0 20%)}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:10px}
+.mark{display:flex;align-items:center;gap:9px;text-decoration:none;font:400 21px/1 var(--font-display);letter-spacing:.06em;text-transform:uppercase}
+.mark .tape{font-size:15px;padding:7px 9px 6px}
+.nav{display:flex;gap:2px;background:var(--soft);padding:4px;border-radius:999px}
+.nav a{padding:8px 14px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;color:var(--ink-2);white-space:nowrap}
+.nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{display:grid;gap:22px;padding:14px 0 26px}
+.hero h1{font:400 clamp(44px,12.4vw,128px)/.92 var(--font-display);text-transform:uppercase;letter-spacing:.004em;margin:14px 0 14px}
+.hero p{max-width:33em;color:var(--ink-2);font-size:17px;margin:0}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);padding:10px 6px 4px}
+.trio img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;box-shadow:0 12px 26px rgba(0,0,0,.26)}
+.trio img:nth-child(1){transform:rotate(-6deg) translate(9%,4%)}
+.trio img:nth-child(2){transform:scale(1.14);position:relative;z-index:1}
+.trio img:nth-child(3){transform:rotate(6deg) translate(-9%,4%)}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);column-gap:16px;border-top:4px solid var(--ink);margin:0;padding:0;list-style:none}
+.facts li{padding:10px 0 9px;border-bottom:1px solid var(--line)}
+.facts b{display:block;font:400 32px/1 var(--font-display);letter-spacing:.01em}
+.facts span{display:block;font-size:13px;line-height:1.35;color:var(--ink-2);margin-top:3px}
+@media (min-width:860px){
+  .hero{grid-template-columns:1.05fr .95fr;align-items:center;column-gap:40px;padding-top:26px}
+  .hero h1{font-size:clamp(60px,7.4vw,88px)}
+  .hero .facts{grid-column:1/-1;grid-template-columns:repeat(4,1fr)}
+}
+
+/* controls */
+.tabsbar{position:sticky;top:0;z-index:5;background:var(--paper);border-top:4px solid var(--ink);padding:10px 0 8px}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 16px;margin:0 -16px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1.5px solid var(--ink);background:transparent;border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap}
+.tab small{font-weight:500;opacity:.62;margin-left:5px;font-size:12px}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.controls{display:grid;gap:14px;padding:8px 0 4px}
+.lbl{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);margin:0 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:8px 11px;font-size:14px;font-weight:600;cursor:pointer;--cut:var(--card)}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--accent-ink);--cut:var(--accent)}
+.levels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.level{display:grid;justify-items:center;gap:1px;border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:8px 2px 7px;cursor:pointer;min-width:0}
+.level span{font-size:11.5px;font-weight:600;color:var(--ink-2);line-height:1.2;text-align:center}
+.level[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.level[aria-pressed="true"] span{color:var(--ink)}
+.find{display:flex;flex-wrap:wrap;gap:8px}
+.find input,.find select{border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:10px 12px;font-size:15px;min-width:0}
+.find input{flex:1 1 210px}
+.find select{flex:0 0 auto}
+.count{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px;color:var(--ink-2);padding-top:2px}
+.count button{border:0;background:none;color:var(--accent);font-weight:700;cursor:pointer;padding:4px 0;text-decoration:underline;text-underline-offset:3px}
+@media (min-width:860px){.controls{grid-template-columns:1fr 1fr;column-gap:32px;align-items:start}.controls .count{grid-column:1/-1}}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:12px 0 44px}
+@media (min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}}
+@media (min-width:1020px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card .hit{position:absolute;inset:0;z-index:1;border-radius:14px}
+.card .pic{position:relative;aspect-ratio:4/3;background:var(--soft)}
+.card .pic img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:8px;bottom:8px;display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:var(--paper);--cut:var(--ink);font-weight:700;font-size:10.5px;line-height:1;letter-spacing:.07em;text-transform:uppercase;padding:5px 7px 5px 6px;border-radius:7px}
+.badge.part{background:var(--card);color:var(--ink);--cut:var(--card)}
+.badge.plain{background:var(--card);color:var(--ink)}
+.heart{position:absolute;top:6px;right:6px;z-index:2;width:36px;height:36px;border-radius:50%;border:0;background:var(--card);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.heart svg{fill:none;stroke:currentColor;stroke-width:1.9}
+.heart[aria-pressed="true"] svg{fill:var(--l5);stroke:var(--l5)}
+.card .body{display:grid;gap:6px;padding:10px 11px 12px}
+.cat{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2)}
+.card h3{font:400 18px/1.1 var(--font-display);text-transform:uppercase;letter-spacing:.012em;margin:0}
+.card .line{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink-2);flex-wrap:wrap}
+.card .line b{color:var(--ink);font-weight:700}
+.card .nums{font-size:12.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.card .nums b{color:var(--ink);font-weight:700}
+@media (min-width:700px){.card h3{font-size:21px}.card .body{padding:12px 14px 15px}.card .line,.card .nums{font-size:13.5px}}
+.empty{grid-column:1/-1;border:1.5px dashed var(--line);border-radius:14px;padding:28px 18px;text-align:center;color:var(--ink-2)}
+
+/* recipe sheet */
+.sheet{position:fixed;inset:0;z-index:50;overflow-y:auto;background:rgba(10,12,15,.62)}
+.sheet[hidden]{display:none}
+.sheet .in{position:relative;background:var(--paper);min-height:100%;max-width:1060px;margin:0 auto}
+.close{position:sticky;top:10px;float:right;margin:10px 10px -54px 0;z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:var(--ink);color:var(--paper);font-size:24px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.s-pic{position:relative;background:var(--soft)}
+.s-pic img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.s-pic .tape{position:absolute;left:14px;bottom:-12px;font-size:14px;z-index:1}
+.credit{font-size:11.5px;color:var(--ink-2);margin-top:12px}
+.s-head{padding:28px 16px 0}
+.s-body{padding:22px 16px 40px;display:grid;gap:24px}
+.s-head h2{font:400 clamp(34px,9.4vw,56px)/.98 var(--font-display);text-transform:uppercase;letter-spacing:.008em;margin:0 0 8px}
+.blurb{margin:0;color:var(--ink-2);font-size:17px;max-width:38em}
+.s-head .savebtn{margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--ink);background:transparent;border-radius:10px;padding:9px 13px;font-weight:700;font-size:14px;cursor:pointer}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn svg{fill:none;stroke:currentColor;stroke-width:1.9}
+.btn[aria-pressed="true"] svg{fill:var(--l5);stroke:var(--l5)}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 12px}
+.stat b{display:block;font:400 30px/1 var(--font-display);letter-spacing:.01em}
+.stat b small{font-size:15px;letter-spacing:.04em;margin-left:3px}
+.stat span{font-size:12.5px;color:var(--ink-2)}
+.stat.diff{grid-column:1/-1;display:flex;align-items:center;gap:14px}
+.stat.diff .t b{font-size:26px}
+.stat.diff .t span{display:block;font-size:13.5px;margin-top:3px}
+@media (min-width:860px){.stats{grid-template-columns:1.7fr repeat(4,1fr)}.stat.diff{grid-column:auto}}
+.foodi{border:2px solid var(--ink);border-radius:14px;padding:13px 14px 14px;display:grid;gap:7px;background:var(--card)}
+.foodi .hd{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.foodi .hd .pill{margin-left:auto;background:var(--ink);color:var(--paper);border-radius:999px;padding:4px 9px;font-size:10.5px;letter-spacing:.06em}
+.foodi .set{font:400 27px/1.05 var(--font-display);text-transform:uppercase;letter-spacing:.02em}
+.foodi p{margin:0;font-size:15px}
+.foodi .also{font-size:13.5px;color:var(--ink-2)}
+.foodi.none{border:1.5px dashed var(--line);background:transparent;color:var(--ink-2)}
+.scaler{display:grid;gap:10px;border-top:4px solid var(--ink);padding-top:14px}
+.scaler h3,.sec h3{font:400 24px/1 var(--font-display);text-transform:uppercase;letter-spacing:.02em;margin:0}
+.meals{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;max-width:420px}
+.meal{border:1.5px solid var(--ink);background:transparent;border-radius:12px;padding:9px 0 7px;font:400 26px/1 var(--font-display);cursor:pointer}
+.meal[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.tip{margin:0;font-size:14.5px;background:var(--soft);border-radius:10px;padding:10px 12px}
+.tip b{font-weight:700}
+.cols{display:grid;gap:26px}
+@media (min-width:860px){.cols{grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:40px;align-items:start}.s-body{padding:30px 40px 48px}
+  .s-top{display:grid;grid-template-columns:minmax(0,11fr) minmax(0,10fr);align-items:center}.s-head{padding:24px 64px 24px 40px}.s-pic .tape{left:20px;bottom:16px}}
+.sec{display:grid;gap:12px;align-content:start}
+.sec .hd{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:4px solid var(--ink);padding-top:12px}
+.grp h4{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);margin:10px 0 2px}
+.ings{list-style:none;margin:0;padding:0}
+.ings li{border-bottom:1px solid var(--line)}
+.ings label{display:grid;grid-template-columns:22px 86px minmax(0,1fr);gap:8px;align-items:baseline;padding:9px 0;cursor:pointer}
+.ings input,.steps input{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1.5px solid var(--ink-2);border-radius:5px;margin:0;align-self:center;display:grid;place-content:center;cursor:pointer;background:transparent}
+.ings input:checked,.steps input:checked{background:var(--ink);border-color:var(--ink)}
+.ings input:checked::after,.steps input:checked::after{content:"";width:9px;height:5px;border-left:2px solid var(--paper);border-bottom:2px solid var(--paper);transform:rotate(-45deg) translate(1px,-1px)}
+.ings .amt{font-weight:700;font-variant-numeric:tabular-nums}
+.ings .nm small{color:var(--ink-2);font-size:13.5px}
+.ings .chk{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);border-bottom:1px dotted var(--accent);margin-left:5px;white-space:nowrap}
+.ings input:checked ~ .amt,.ings input:checked ~ .nm{opacity:.42;text-decoration:line-through}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:2px}
+.steps li{counter-increment:s;border-bottom:1px solid var(--line)}
+.steps label{display:grid;grid-template-columns:34px minmax(0,1fr) 22px;gap:10px;align-items:start;padding:12px 0;cursor:pointer}
+.steps label::before{content:counter(s);font:400 30px/.95 var(--font-display);color:var(--accent)}
+.steps input{margin-top:3px}
+.steps span{max-width:36em}
+.steps li:has(input:checked) span{opacity:.42}
+.store{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.store .stat b{font-size:24px}
+.para{margin:0;font-size:15px}
+.para + .para{margin-top:6px}
+.tips{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px}
+.nutri{border:2px solid var(--ink);background:var(--card);padding:10px 12px 12px;max-width:420px}
+.nutri h3{font:400 30px/1 var(--font-display);text-transform:uppercase;margin:0;padding-bottom:5px;border-bottom:8px solid var(--ink)}
+.nutri .per{font-size:13px;padding:4px 0;border-bottom:1px solid var(--ink)}
+.nutri .cal{display:flex;justify-content:space-between;align-items:baseline;border-bottom:5px solid var(--ink);padding:4px 0 2px}
+.nutri .cal span{font-weight:700;font-size:20px}
+.nutri .cal b{font:400 44px/1 var(--font-display)}
+.nutri .row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line);font-size:15px;font-variant-numeric:tabular-nums}
+.nutri .row b{font-weight:700}
+.bar{display:flex;height:10px;margin:10px 0 6px;border-radius:2px;overflow:hidden;background:var(--line)}
+.bar i{display:block;height:100%}
+.bar .p{background:var(--accent)}.bar .c{background:var(--ink-2)}.bar .f{background:var(--line)}
+.nutri small{display:block;font-size:12px;color:var(--ink-2);line-height:1.4}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:10px;border-top:1px solid var(--line);padding-top:16px}
+.pn a{text-decoration:none;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--card);min-width:0}
+.pn a span{display:block;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2)}
+.pn a b{display:block;font:400 17px/1.15 var(--font-display);text-transform:uppercase;letter-spacing:.012em;margin-top:3px}
+.pn a:last-child{text-align:right}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:600;font-size:14px;z-index:80;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.toast[hidden]{display:none}
+
+/* guide */
+.guide{display:grid;gap:34px;padding:8px 0 48px}
+.guide h1{font:400 clamp(46px,13vw,104px)/.92 var(--font-display);text-transform:uppercase;margin:18px 0 10px}
+.guide .lead{color:var(--ink-2);font-size:17px;max-width:36em;margin:0}
+.g{display:grid;gap:14px;border-top:4px solid var(--ink);padding-top:14px}
+.g h2{font:400 30px/1 var(--font-display);text-transform:uppercase;letter-spacing:.015em;margin:0}
+.g p{margin:0;max-width:40em}
+.g .muted{color:var(--ink-2);font-size:14px}
+.steps4{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));list-style:none;margin:0;padding:0;counter-reset:w}
+.steps4 li{counter-increment:w;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.steps4 li::before{content:counter(w);font:400 40px/1 var(--font-display);color:var(--accent);display:block}
+.steps4 b{display:block;font:400 21px/1.1 var(--font-display);text-transform:uppercase;letter-spacing:.02em;margin:6px 0 4px}
+.week{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.week div{border-radius:10px;padding:10px 6px 9px;text-align:center;font-size:12.5px;font-weight:600;line-height:1.25;border:1.5px solid var(--ink)}
+.week div b{display:block;font:400 22px/1 var(--font-display);letter-spacing:.03em;margin-bottom:4px}
+.week .fz{background:var(--tape);color:var(--tape-ink);border-color:var(--tape)}
+.rules{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));list-style:none;margin:0;padding:0}
+.rules li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.rules b{display:block;font:400 21px/1.1 var(--font-display);text-transform:uppercase;letter-spacing:.02em;margin-bottom:4px}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td b{font-weight:700;white-space:nowrap}
+.t2 td:first-child{width:52%}
+.t3 td:nth-child(1){width:40%}.t3 td:nth-child(3){width:36%}
+.key{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.key > div{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14.5px}
+.key .badge{position:static;flex:none;margin-top:2px}
+.key .badge.part,.key .badge.plain{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.dials{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.dials div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 6px;display:grid;justify-items:center;gap:3px;text-align:center}
+.dials b{font:400 17px/1.1 var(--font-display);text-transform:uppercase;letter-spacing:.02em}
+.dials span{font-size:12px;color:var(--ink-2);line-height:1.3}
+@media (max-width:620px){.dials{grid-template-columns:repeat(2,minmax(0,1fr))}.dials div:last-child{grid-column:1/-1}}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:0;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.checks li{padding:11px 14px;border-bottom:1px solid var(--line);font-size:15px}
+.checks li:last-child{border-bottom:0}
+.checks b{font-weight:700}
+footer{border-top:1px solid var(--line);padding:18px 0 40px;color:var(--ink-2);font-size:13px}
+footer p{margin:0 0 6px;max-width:60em}
+@media (prefers-reduced-motion:no-preference){
+  .card .pic img{transition:transform .35s ease}
+  .card:hover .pic img{transform:scale(1.04)}
+}
+
+/* Arabic edition: right-to-left layout and Arabic type.
+   Arabic letters join, so nothing is letter-spaced; display lines get more height because Arabic glyphs are taller. */
+[lang="ar"] *{letter-spacing:0 !important}
+body{line-height:1.7}
+.trio{direction:ltr}
+.mark{font-size:23px;line-height:1.3}
+.tape{line-height:1.45;padding:4px 12px 2px}
+.mark .tape{padding:4px 9px 2px}
+.hero h1{line-height:1.25}
+.hero p{line-height:1.75}
+.facts b{line-height:1.3}
+.facts span{font-size:13.5px;line-height:1.5}
+.lbl{font-size:12.5px}
+.cat{font-size:12px}
+.badge{font-size:11.5px;line-height:1.3;padding:3px 7px 3px 6px}
+.card h3{line-height:1.45}
+.s-head h2{line-height:1.35}
+.blurb{line-height:1.75}
+.stat b{line-height:1.3}
+.stat.diff .t span{line-height:1.6}
+.foodi .hd{font-size:13px}
+.foodi .set{line-height:1.5}
+.scaler h3,.sec h3{line-height:1.4}
+.grp h4{font-size:12.5px}
+.nutri h3{line-height:1.35}
+.nutri .cal b{line-height:1.2}
+.pn a span{font-size:12.5px}
+.pn a b{line-height:1.5}
+.guide h1{line-height:1.25}
+.g h2{line-height:1.35}
+.steps4 b,.rules b{line-height:1.45}
+.week div b{line-height:1.3;font-size:20px;white-space:nowrap}
+.dials b{line-height:1.45}
+th{font-size:12.5px}
+.close{float:left;margin:10px 0 -54px 10px}
+.s-pic .tape{left:auto;right:14px}
+.badge{left:auto;right:8px}
+.heart{right:auto;left:6px}
+.tab small{margin-left:0;margin-right:6px}
+.stat b small{margin-left:0;margin-right:4px}
+.foodi .hd .pill{margin-left:0;margin-right:auto}
+.ings label{grid-template-columns:22px 108px minmax(0,1fr)}
+.ings .chk{margin-left:0;margin-right:6px}
+.tips{padding-left:0;padding-right:20px}
+th,td{text-align:right}
+.pn a:last-child{text-align:left}
+@media (min-width:860px){.s-pic .tape{left:auto;right:20px}.s-head{padding:24px 40px 24px 64px}}
+/* header: four sections. On phones the brand sits above a full-width switcher. */
+.nav .sm{display:none}
+@media (max-width:560px){
+.top{flex-wrap:wrap;row-gap:10px}
+.nav{width:100%}
+.nav a{flex:1;text-align:center;padding:8px 4px;font-size:13.5px}
+.nav .lg{display:none}
+.nav .sm{display:inline}
+.mark{font-size:20px}
+.mark .tape{font-size:14px}
+}
+.muted{color:var(--ink-2);font-size:14px;margin:10px 0 0;max-width:42em}
+.para{margin:0}
+
+/* sauces page: same cards and sheet as the recipes */
+.badge.heat{background:#B8321F;color:#FFFFFF}
+.scard .line{font-size:13px;color:var(--ink-2)}
+.btips{display:grid;gap:10px;border-top:4px solid var(--ink);padding:14px 0 44px}
+.btips h2{font:400 26px/1.4 var(--font-display);margin:0}
+.btips ul{margin:0;padding:0 20px 0 0;display:grid;gap:6px;font-size:15px;max-width:44em}
+.sstats{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:860px){.stats.sstats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.sec .hd .hdn{font-size:13px;color:var(--ink-2)}
+.stip{margin:0;font-size:14px;color:var(--ink-2);border-right:3px solid var(--line);padding-right:10px}
+.pairs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(148px,170px);gap:10px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}
+.pair{display:grid;align-content:start;gap:6px;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.pair img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pair span{padding:0 10px 10px;font-weight:600;font-size:13.5px;line-height:1.55}
+
+/* sauce links under each recipe */
+.schips{display:flex;flex-wrap:wrap;gap:8px}
+.schip{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);border:1.5px solid var(--line);border-radius:12px;padding:5px 5px 5px 12px;background:var(--card);font-weight:600;font-size:14.5px}
+.schip img{width:52px;height:39px;border-radius:8px;object-fit:cover;flex:none}
+.schip small{font-weight:400;color:var(--ink-2);font-size:12.5px}
+.snote{margin:0;font-size:13px;color:var(--ink-2)}
+
+/* my ratings */
+.rbadge{position:absolute;top:8px;right:8px;z-index:2;display:inline-flex;align-items:center;gap:3px;background:var(--ink);color:var(--paper);font-weight:700;font-size:12.5px;line-height:1;padding:5px 8px 5px 7px;border-radius:999px}
+.rbadge svg{width:13px;height:13px;fill:#F5B82E}
+.rate{margin-top:16px;display:grid;gap:8px;max-width:32em}
+.rrow{display:grid;gap:2px;justify-items:start}
+.rq{font-weight:700;font-size:14.5px}
+.stars{display:flex;gap:0;margin-right:-4px}
+.star{border:0;background:none;padding:4px;cursor:pointer;line-height:0;border-radius:8px;color:inherit}
+.star svg{width:32px;height:32px;fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-linejoin:round}
+.star[aria-pressed="true"] svg{fill:#F5B82E;stroke:#C98A0B}
+.star:focus-visible{outline:2px solid var(--accent)}
+@media (hover:hover){.stars:hover .star svg{fill:#F5B82E;stroke:#C98A0B}.stars .star:hover ~ .star svg{fill:none;stroke:var(--ink-2)}}
+.rmeta{font-size:13.5px;color:var(--ink-2);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.rmeta b{color:var(--ink)}
+.linkbtn{border:0;background:none;color:var(--accent);cursor:pointer;padding:2px 4px;text-decoration:underline;text-underline-offset:3px;font:inherit;font-weight:700}
+.rnote{display:grid;gap:4px}
+.rnote span{font-size:12.5px;font-weight:700;color:var(--ink-2)}
+.rnote textarea{font:inherit;font-size:15px;line-height:1.6;padding:8px 10px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);resize:vertical;min-height:66px}
+.rnote textarea:focus{outline:none;border-color:var(--ink)}
+.ro{display:inline-flex;gap:1px;line-height:0;vertical-align:middle}
+.ro svg{width:15px;height:15px;fill:var(--line)}
+.ro svg.on{fill:#F5B82E}
+
+/* tried page */
+.tsort{margin:0;padding:2px 0}
+.tlist{display:grid;gap:28px}
+.tgroup h2{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font:400 24px/1.4 var(--font-display);margin:0 0 12px;border-top:4px solid var(--ink);padding-top:12px}
+.tgroup h2 .ro svg{width:20px;height:20px}
+.tgroup h2 small{font:600 13px/1 var(--font-body);color:var(--ink-2)}
+.trows{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr))}
+.trow{display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;align-items:start;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px}
+.trow img{width:112px;aspect-ratio:4/3;object-fit:cover;border-radius:9px}
+.trow b{display:block;font:400 18px/1.45 var(--font-display)}
+.trow .tst{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:13px;color:var(--ink-2);margin-top:2px}
+.trow .tst strong{color:var(--ink);font-weight:700}
+.trow .tnote{margin:6px 0 0;font-size:13.5px;line-height:1.6;background:var(--paper);border-radius:8px;padding:6px 8px;white-space:pre-wrap;overflow-wrap:anywhere}
+.tempty{display:grid;gap:12px;justify-items:center;line-height:1.8}
+.tempty .btn{text-decoration:none}
+.tempty .tbtns{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.trow .tkind{display:inline-block;vertical-align:middle;margin-inline-start:4px;font:600 11.5px/1 var(--font-body);color:var(--ink-2);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 8px}
+</style>
+</head>
+<body>
+<header class="wrap top">
+  <a class="mark" href="#recipes"><span class="tape">تحضير</span>الغداء</a>
+  <nav class="nav" aria-label="الأقسام">
+    <a href="#recipes" id="nav-recipes" aria-current="page">الوصفات</a>
+    <a href="#tried" id="nav-tried">جرّبتها</a>
+    <a href="#sauces" id="nav-sauces">الصوصات</a>
+    <a href="#guide" id="nav-guide"><span class="lg">دليل التحضير</span><span class="sm">الدليل</span></a>
+  </nav>
+</header>
+
+<main id="view-recipes" class="wrap">
+  <section class="hero">
+    <div>
+      <span class="tape" id="hero-tape">52 وجبة غداء للعمل</span>
+      <h1>اطبخ مرة واحدة.<br>وتغدَّ طوال الأسبوع.</h1>
+      <p>وجبات غداء غنية بالبروتين، بنحو 500 سعرة للوجبة، تصمد في الثلاجة وفي ميكروويف المكتب. اختر وصفة، وحدّد عدد الوجبات، واطبخ.</p>
+    </div>
+    <div class="trio" aria-hidden="true">
+      <img src="img/salmon-rice-bowl.webp" data-pic="salmon-rice-bowl" alt="" width="960" height="720">
+      <img src="img/kofta-potato-tomato-bake.webp" data-pic="kofta-potato-tomato-bake" alt="" width="960" height="720">
+      <img src="img/lemon-herb-chicken-quinoa.webp" data-pic="lemon-herb-chicken-quinoa" alt="" width="960" height="720">
+    </div>
+    <ul class="facts" id="facts"></ul>
+  </section>
+
+  <div class="tabsbar"><div class="tabs" id="tabs" role="group" aria-label="المكوّن الرئيسي"></div></div>
+  <section class="controls" aria-label="الفلاتر">
+    <div>
+      <p class="lbl">ضيّق الاختيار</p>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div>
+      <p class="lbl">الصعوبة، من 5</p>
+      <div class="levels" id="levels"></div>
+    </div>
+    <div class="find">
+      <input id="q" type="search" placeholder="ابحث عن طبق أو مكوّن" aria-label="ابحث في الوصفات" autocomplete="off">
+      <select id="sort" aria-label="ترتيب الوصفات">
+        <option value="book">ترتيب الكتاب</option>
+        <option value="time">الأسرع</option>
+        <option value="level">الأسهل</option>
+        <option value="kcal">الأقل سعرات</option>
+        <option value="protein">الأكثر بروتينًا</option>
+      </select>
+    </div>
+    <div class="count"><span id="count"></span><button type="button" id="clear" hidden>امسح الفلاتر</button></div>
+  </section>
+  <section class="grid" id="grid" aria-live="polite"></section>
+</main>
+
+<main id="view-tried" class="wrap" hidden>
+  <div class="guide tpage">
+    <div>
+      <span class="tape">قيّم كل وصفة وكل صوص بعد أن تجرّبه</span>
+      <h1>وصفات وصوصات جرّبتها</h1>
+      <p class="lead" id="tried-lead">لم تقيّم أي وصفة أو صوص بعد.</p>
+      <p class="muted" id="tried-sync"></p>
+    </div>
+    <div class="tabs tsort" id="tried-bar" role="group" aria-label="ترتيب ما جرّبته" hidden>
+      <button type="button" class="tab" data-tsort="stars" aria-pressed="true">حسب التقييم</button>
+      <button type="button" class="tab" data-tsort="date" aria-pressed="false">الأحدث</button>
+    </div>
+    <div id="tried-list" class="tlist"></div>
+  </div>
+</main>
+
+<main id="view-sauces" class="wrap" hidden>
+  <section class="hero shero">
+    <div>
+      <span class="tape">حضّرها مرة، واعصرها كل الأسبوع</span>
+      <h1>صوصات مشهورة.<br>بنسخة بيتية أخف.</h1>
+      <p><span id="sauce-count">17 صوصًا</span> من الثومية والطحينة إلى الكاتشب والترياكي. كل صوص يعبّي عبوة ضغط صغيرة تبقى في الثلاجة، فتعصر منه على علبة الغداء مثل الكاتشب. وتحت كل وصفة في الكتاب ستجد الصوصات التي تليق بها.</p>
+    </div>
+    <div class="trio" aria-hidden="true">
+      <img src="img/sauce-toum.webp" alt="" width="960" height="720">
+      <img src="img/sauce-ketchup.webp" alt="" width="960" height="720">
+      <img src="img/sauce-green-shatta.webp" alt="" width="960" height="720">
+    </div>
+    <ul class="facts" id="sfacts"></ul>
+  </section>
+  <div class="tabsbar"><div class="tabs" id="stabs" role="group" aria-label="نوع الصوص"></div></div>
+  <section class="grid" id="sgrid" aria-live="polite"></section>
+  <section class="btips">
+    <h2>العبوة</h2>
+    <ul>
+      <li>عبوة ضغط بفتحة متوسطة تناسب الصوصات الناعمة، وبفتحة واسعة للتي فيها أعشاب أو قطع صغيرة.</li>
+      <li>املأها بقمع، واكتب عليها اسم الصوص وتاريخ تحضيره.</li>
+      <li>رجّ العبوة قبل كل استعمال. وإن ثقل الصوص في الثلاجة، أضف ملعقة ماء ورجّها.</li>
+      <li>اعصر الصوص وقت الأكل، أو في علبة صغيرة منفصلة، حتى لا يطرّي أكل العلبة.</li>
+    </ul>
+    <p class="muted">الحصة ملعقتان كبيرتان، والسعرات المذكورة لها، وهي غير محسوبة في قيم الوصفات.</p>
+  </section>
+</main>
+
+<main id="view-guide" class="wrap" hidden>
+  <div class="guide">
+    <div>
+      <span class="tape">اقرأه مرة واحدة</span>
+      <h1>دليل التحضير</h1>
+      <p class="lead">كيف تحوّل جلسة طبخ واحدة إلى غداء أسبوع كامل، وتحفظه آمنًا، وتستفيد أقصى استفادة من جهاز Ninja Foodi.</p>
+    </div>
+
+    <section class="g">
+      <h2>كيف تقرأ الوصفة</h2>
+      <div class="dials" id="g-dials"></div>
+      <div class="key">
+        <div><span class="badge" id="k-full"></span><span>الوصفة كلها تُطبخ في Ninja Foodi. الكسكس والبرغل لا يحتاجان إلا ماءً مغليًا من الغلاية.</span></div>
+        <div><span class="badge part" id="k-part"></span><span>الجزء الرئيسي يُطبخ في الـFoodi، وما زال الأرز أو المعكرونة أو الصلصة يحتاج الموقد.</span></div>
+        <div><span class="badge plain">بلا طبخ</span><span>لا شيء يُطبخ أبدًا. افتح العلب، وقطّع، واخلط.</span></div>
+      </div>
+      <p class="muted">كل وصفة تذكر مكوّنات وجبة واحدة، وتحسب الكميات حتى خمس وجبات. اضغط على أي مكوّن أو خطوة لتضع عليها علامة وأنت تتسوّق وتطبخ.</p>
+    </section>
+
+    <section class="g">
+      <h2>أسبوع التحضير</h2>
+      <ol class="steps4">
+        <li><b>اختر</b>اختر وصفة أو وصفتين. إن أردت خمس وجبات غداء من طبخة واحدة، فاختر الوصفات المعلّمة بأنها «تصلح للتجميد».</li>
+        <li><b>اطبخ</b>خصّص 60 إلى 90 دقيقة. ابدأ بما يأخذ أطول وقت: الحبوب وكل ما يُحمّص في الفرن.</li>
+        <li><b>برّد وعبّئ</b>عبّئ الطعام في علب مسطّحة وأدخلها الثلاجة خلال ساعتين. اترك الأغطية مواربة حتى يتوقف البخار.</li>
+        <li><b>كُل</b>غداء الأيام 1 إلى 3 من الثلاجة. جمّد الباقي يوم الطبخ، وانقل كل وجبة إلى الثلاجة في الليلة التي تسبق يومها.</li>
+      </ol>
+      <div class="week" aria-label="أين يُحفظ غداء كل يوم">
+        <div><b>يوم 1</b>الثلاجة</div><div><b>يوم 2</b>الثلاجة</div><div><b>يوم 3</b>الثلاجة</div><div class="fz"><b>يوم 4</b>الفريزر</div><div class="fz"><b>يوم 5</b>الفريزر</div>
+      </div>
+      <p class="muted">لا مكان في الفريزر؟ اطبخ مرتين في الأسبوع بدلًا من ذلك، الأحد والأربعاء مثلًا، بوصفة مختلفة في كل مرة.</p>
+    </section>
+
+    <section class="g">
+      <h2>لماذا هذه الوجبات خفيفة</h2>
+      <ul class="rules">
+        <li><b>البروتين أولًا</b><span id="g-protein"></span> فيبقيك شبعانًا حتى آخر النهار.</li>
+        <li><b>نصف العلبة خضار</b>حجم كبير بسعرات قليلة جدًا، فتبدو العلبة وجبة كاملة وتُشعرك بذلك.</li>
+        <li><b>الكربوهيدرات تُوزن نيئة</b>من 30 إلى 55 غ من الأرز أو المعكرونة أو الحبوب لكل وجبة. زِنها قبل الطبخ لا بعده.</li>
+        <li><b>الزيت بالملعقة الصغيرة</b>ملعقة كبيرة من الزيت فيها نحو 120 سعرة. قياسه أسهل توفير للسعرات على الإطلاق.</li>
+      </ul>
+      <p class="muted">خسارة الوزن تأتي من أكل سعرات أقل مما تحرق. هذه الوجبات تجعل الالتزام بذلك أسهل، لكنها ليست خطة طبية.</p>
+    </section>
+
+    <section class="g">
+      <h2>أرقام التخزين</h2>
+      <div class="tblwrap"><table class="t2">
+        <tr><th>البند</th><th>الرقم</th></tr>
+        <tr><td>حرارة الثلاجة</td><td><b>4 درجات مئوية</b> أو أبرد</td></tr>
+        <tr><td>إدخال الطعام الثلاجة بعد الطبخ</td><td>خلال <b>ساعتين</b></td></tr>
+        <tr><td>الوجبات المطبوخة في الثلاجة</td><td><b>3 إلى 4 أيام</b>. حرصًا على الجودة، يعتمد هذا الكتاب 3 أيام للسلمون ويومين للسمك الأبيض وستيك التونة.</td></tr>
+        <tr><td>في الفريزر</td><td>الأفضل خلال <b>3 إلى 4 أشهر</b></td></tr>
+        <tr><td>التذويب</td><td>ليلة كاملة في الثلاجة</td></tr>
+        <tr><td>إعادة التسخين</td><td>حتى يسخن الطعام تمامًا ويتصاعد منه البخار حتى الوسط، <b>74 درجة مئوية</b></td></tr>
+        <tr><td>الأرز</td><td>برّده بسرعة: افرده في صينية وأدخله الثلاجة خلال ساعة</td></tr>
+      </table></div>
+      <div class="tblwrap"><table class="t2">
+        <tr><th>اطبخ حتى تصل حرارة الوسط إلى</th><th>الحرارة</th></tr>
+        <tr><td>الدجاج والديك الرومي، قطعًا كاملة أو مفرومًا</td><td><b>74 درجة مئوية</b></td></tr>
+        <tr><td>لحم البقر المفروم: كفتة، برغر، كرات لحم</td><td><b>71 درجة مئوية</b></td></tr>
+        <tr><td>الستيك</td><td><b>63 درجة مئوية</b>، ثم اتركه يرتاح 3 دقائق</td></tr>
+        <tr><td>السمك</td><td><b>63 درجة مئوية</b>، أو حتى يتفتت بسهولة</td></tr>
+      </table></div>
+    </section>
+
+    <section class="g">
+      <h2>جهاز Ninja Foodi</h2>
+      <p>الإعدادات في هذا الكتاب مخصّصة لجهاز Foodi MAX Health Grill and Air Fryer. <span id="g-foodi"></span></p>
+      <ul class="rules">
+        <li><b>سخّن الجهاز أولًا</b>الشواء (Grill) يحتاج نحو 10 دقائق ليسخن، وبقية الوظائف (Air Fry و Roast و Bake) نحو 3 دقائق. أضف الطعام حين يطلب منك الجهاز ذلك.</li>
+        <li><b>اختر درجة الشواء</b>‏LO للصلصات الكثيفة السكّرية، وMED للحم المتبّل أو المدهون بالصلصة وللأسياخ والخبز، وHI للدجاج والستيك والبرغر، وMAX للسمك والخضار.</li>
+        <li><b>وصفة مكتوبة للفرن؟</b>استخدم Roast أو Bake بحرارة أقل بـ10 درجات من حرارة الفرن، وافحص الطعام قبل الوقت.</li>
+        <li><b>اترك اللحم يرتاح</b>امنحه 3 إلى 5 دقائق قبل التقطيع. المجس لا يصلح للقطع الأرق من 1.5 سم.</li>
+      </ul>
+      <div class="tblwrap"><table class="t3">
+        <tr><th>الطعام</th><th>الإعداد</th><th>الوقت</th></tr>
+        <tr><td>صدر دجاج كامل (200 إلى 250 غ)</td><td><b>Grill HI</b></td><td>16 إلى 20 دقيقة، مع القلب في المنتصف</td></tr>
+        <tr><td>فيليه أفخاذ الدجاج</td><td><b>Grill HI</b></td><td>10 إلى 12 دقيقة، مع القلب في المنتصف</td></tr>
+        <tr><td>أسياخ الدجاج</td><td><b>Grill MED</b></td><td>نحو 10 دقائق، مع التقليب مرة</td></tr>
+        <tr><td>برغر وكفتة لحم بسماكة 2 سم</td><td><b>Grill HI</b></td><td>7 إلى 9 دقائق</td></tr>
+        <tr><td>ستيك بسماكة 2 سم</td><td><b>Grill HI</b></td><td>9 إلى 12 دقيقة، مع القلب في المنتصف</td></tr>
+        <tr><td>فيليه السلمون</td><td><b>Grill MAX</b></td><td>6 إلى 8 دقائق</td></tr>
+        <tr><td>السمك الأبيض وستيك التونة</td><td><b>Grill MAX</b></td><td>4 إلى 6 دقائق</td></tr>
+        <tr><td>فلفل مقطّع أرباعًا</td><td><b>Grill MAX</b></td><td>6 إلى 9 دقائق</td></tr>
+        <tr><td>كوسا</td><td><b>Grill MAX</b></td><td>10 إلى 12 دقيقة</td></tr>
+        <tr><td>قطع باذنجان</td><td><b>Grill MAX</b></td><td>8 إلى 10 دقائق</td></tr>
+        <tr><td>قطع بطاطا حلوة</td><td><b>Air Fry 200°C</b></td><td>15 إلى 20 دقيقة</td></tr>
+        <tr><td>بطاطا حلوة كاملة</td><td><b>Air Fry 200°C</b></td><td>25 إلى 30 دقيقة</td></tr>
+        <tr><td>أصابع البطاطا</td><td><b>Air Fry 200°C</b></td><td>22 إلى 25 دقيقة</td></tr>
+        <tr><td>زهرات القرنبيط</td><td><b>Air Fry 200°C</b></td><td>9 إلى 11 دقيقة</td></tr>
+        <tr><td>صدر دجاج (150 غ)</td><td><b>Air Fry 190°C</b></td><td>18 إلى 22 دقيقة</td></tr>
+        <tr><td>أقراص السمك</td><td><b>Air Fry 200°C</b></td><td>10 إلى 12 دقيقة</td></tr>
+      </table></div>
+      <p class="muted">الأوقات مأخوذة من جداول الطبخ التي تصدرها Ninja لهذا الطراز. السماكة تغيّر كل شيء، فافحص اللحم بميزان حرارة.</p>
+    </section>
+
+    <section class="g">
+      <h2>الحبوب في لمحة</h2>
+      <div class="tblwrap"><table>
+        <tr><th>الحبوب</th><th>نيئة، لكل وجبة</th><th>الماء</th><th>الطريقة</th></tr>
+        <tr><td>أرز بسمتي</td><td><b>45 غ</b></td><td>ضعف حجمه</td><td>اغسله. اطبخه مغطّى على نار هادئة 10 إلى 12 دقيقة، ثم اتركه 5 دقائق</td></tr>
+        <tr><td>كينوا</td><td><b>45 غ</b></td><td>ضعف حجمها</td><td>اغسلها. اطبخها مغطّاة على نار هادئة 12 إلى 15 دقيقة، ثم اتركها 5 دقائق</td></tr>
+        <tr><td>برغل</td><td><b>40 غ</b></td><td>ضعف حجمه، ماء مغلي</td><td>غطّه واتركه 15 دقيقة</td></tr>
+        <tr><td>كسكس</td><td><b>40 غ</b></td><td>الحجم نفسه، ماء مغلي</td><td>غطّه 5 دقائق، ثم قلّبه بالشوكة</td></tr>
+        <tr><td>معكرونة قمح كامل</td><td><b>50 غ</b></td><td>كمية وافرة، مملّحة</td><td>اسلقها 9 إلى 11 دقيقة</td></tr>
+        <tr><td>لسان العصفور</td><td><b>40 غ</b></td><td>كمية وافرة، مملّحة</td><td>اسلقه 8 إلى 9 دقائق</td></tr>
+        <tr><td>نودلز سوبا</td><td><b>45 غ</b></td><td>كمية وافرة</td><td>اسلقها 4 إلى 5 دقائق، واشطفها بماء بارد</td></tr>
+      </table></div>
+    </section>
+
+    <section class="g">
+      <h2>راجع الملصق</h2>
+      <p>لا شيء في هذا الكتاب فيه كحول أو لحم خنزير أو قشريات ومحار. لكن بعض المرطبانات والعبوات تستحق قراءة ملصقها قبل الشراء، وهي معلّمة بعبارة <b>راجع الملصق</b> في قوائم المكوّنات.</p>
+      <ul class="checks">
+        <li><b>صلصة الصويا.</b> صلصة الصويا المخمّرة طبيعيًا فيها كحول. اختر زجاجة مكتوبًا عليها حلال أو خالية من الكحول.</li>
+        <li><b>خل الأرز.</b> الخلطات المتبّلة قد تحتوي على الميرين. اشترِ خل الأرز العادي، أو استخدم خل التفاح أو عصير الليمون.</li>
+        <li><b>الخردل.</b> بعض خردل ديجون يُصنع بالنبيذ الأبيض. الخردل الأصفر العادي هو الخيار الأبسط.</li>
+        <li><b>الهريسة وصلصة الفلفل الحار والصلصة الحارة.</b> لا مشكلة فيها غالبًا. ابحث عن علامة حلال.</li>
+        <li><b>المرق.</b> مرق الخضار يبسّط الأمر. افحص مكعبات المرق بحثًا عن علامة حلال.</li>
+        <li><b>الفيتا والموزاريلا والكوتج.</b> بعضها يُصنع بمنفحة حيوانية. ابحث عن علامة حلال أو علامة نباتي.</li>
+      </ul>
+    </section>
+
+    <section class="g">
+      <h2>الأدوات</h2>
+      <ul class="rules">
+        <li><b>علب زجاجية</b>بأغطية بمشابك، سعة 800 مل إلى لتر، بقسمين أو ثلاثة. تنتقل من الفريزر إلى الميكروويف ولا تتبقّع.</li>
+        <li><b>علب صغيرة للصلصات</b>علب بسعة 60 مل تُبقي الصلصات واللبن بعيدًا عن الطعام حتى وقت الغداء.</li>
+        <li><b>ميزان مطبخ</b>الكتاب كله بالغرامات. الميزان أسرع من الأكواب وأدق منها بكثير.</li>
+        <li><b>ميزان حرارة بمجس</b>نهاية التخمين في نضج الدجاج.</li>
+        <li><b>شريط لاصق وقلم</b>اكتب اسم الطبق والتاريخ على كل علبة، كما تفعل مطابخ المطاعم.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p id="pic-note">كل صور الكتاب، للوجبات والصوصات، رسومات مولّدة بالذكاء الاصطناعي (Gemini).</p>
+  <p>القيم الغذائية تقديرات لكل وجبة، محسوبة من أوزان المكوّنات النيئة وفق متوسطات وزارة الزراعة الأمريكية (USDA). البهارات غير محسوبة.</p>
+  <p>أرقام التخزين والحرارة تتبع إرشادات سلامة الغذاء الصادرة عن USDA. أوقات Ninja Foodi تتبع جداول الطبخ من Ninja لجهاز Foodi MAX Health Grill and Air Fryer.</p>
+</footer>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="s-title"><div class="in" id="sheet-in"></div></div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="data.js"></script>
+<script src="credits.js"></script>
+<script>
+(function () {
+  'use strict';
+  var P = window.PREP, ING = P.ing, R = P.recipes, CRED = window.PREP_CREDITS || {}, PICS = window.PREP_IMG || {};
+  function pic(id) { return PICS[id] || 'img/' + id + '.webp'; }
+  var byId = {}; R.forEach(function (r, i) { byId[r.id] = r; r._i = i; });
+  var SAU = P.sauces || [], bySauce = {};
+  SAU.forEach(function (s) { bySauce[s.id] = s; s._recipes = []; });
+  R.forEach(function (r) { (r.sauces || []).forEach(function (id) { if (bySauce[id]) bySauce[id]._recipes.push(r); }); });
+  var CATS = [['all', 'الكل'], ['chicken', 'دجاج'], ['beef', 'لحم بقر'], ['salmon', 'سلمون'], ['tuna', 'تونة'], ['more', 'أخرى']];
+  var MORE = { 'turkey-taco-lettuce-cups': 'ديك رومي', 'spicy-tomato-fish-couscous': 'سمك أبيض', 'lemon-cod-white-beans': 'سمك أبيض', 'spiced-fish-taco-bowl': 'سمك أبيض', 'vegetable-frittata-squares': 'بيض', 'red-lentil-spinach-dal': 'عدس', 'lentil-roasted-vegetable-salad': 'عدس', 'mezze-protein-box': 'بيض', 'shakshuka': 'بيض' };
+  var CATNAME = { chicken: 'دجاج', beef: 'لحم بقر', salmon: 'سلمون', tuna: 'تونة' };
+  var LEVEL = ['', 'سهل جدًا', 'سهل', 'متوسط', 'متقدّم', 'مشروع'];
+  var LEVELWHAT = ['', 'طبخ قليل أو بلا طبخ. اخلط وعبّئ.', 'مقلاة واحدة أو صينية واحدة وقليل من التقطيع.', 'شيئان على النار معًا، أو صلصة تحضّرها.', 'عدة مراحل: تشكيل أو حشو أو تبريد.', 'طبخة لعطلة نهاية الأسبوع فيها طبقات وتوقيت.'];
+  var SERVE = { hot: 'تُسخَّن', cold: 'تؤكل باردة', either: 'ساخنة أو باردة' };
+  function catOf(r) { return CATNAME[r.cat] || MORE[r.id] || 'أخرى'; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function $(id) { return document.getElementById(id); }
+
+  // ---------- Arabic counting: 3 to 10 take the plural noun, other numbers the singular
+  function pl(n, one, many) { var t = Math.floor(n) % 100; return t >= 3 && t <= 10 ? many : one; }
+  function mealsTxt(n) { return n === 1 ? 'وجبة واحدة' : n === 2 ? 'وجبتين' : n + ' ' + pl(n, 'وجبة', 'وجبات'); }
+  function daysTxt(n) { return n === 1 ? 'يوم واحد' : n === 2 ? 'يومين' : n + ' ' + pl(n, 'يومًا', 'أيام'); }
+  function minTxt(n) { return n + ' ' + pl(n, 'دقيقة', 'دقائق'); }
+  function kcalWord(n) { return pl(n, 'سعرة', 'سعرات'); }
+  // Search ignores short vowels, shadda, tatweel and the usual alef, yaa and taa marbuta spellings.
+  function norm(s) { return String(s).toLowerCase().replace(/[ً-ٰٟـ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي'); }
+
+  // ---------- saved state (one browser only; the page works without it)
+  var S = { cat: 'all', foodi: false, freeze: false, cold: false, quick: false, fav: false, untried: false, levels: {}, q: '', qw: [], sort: 'book', meals: 3, favs: {}, scat: 'all', tsort: 'stars', view: 'recipes' };
+  try { var saved = JSON.parse(localStorage.getItem('prepbook.ar.v1') || '{}'); if (saved.meals >= 1 && saved.meals <= 5) S.meals = saved.meals; (saved.favs || []).forEach(function (id) { if (byId[id]) S.favs[id] = 1; }); } catch (e) {}
+  function persist() { try { localStorage.setItem('prepbook.ar.v1', JSON.stringify({ meals: S.meals, favs: Object.keys(S.favs) })); } catch (e) {} }
+
+  // ---------- icons
+  var ICON = {
+    foodi: '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M3.5 12.5h17v4a2.5 2.5 0 0 1-2.5 2.5H6a2.5 2.5 0 0 1-2.5-2.5z" fill="currentColor"/><path d="M4.6 10.4C6 6.6 8.8 4.8 12 4.8s6 1.8 7.4 5.6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M10 2.9h4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M8 14.7v2.3M12 14.7v2.3M16 14.7v2.3" stroke="var(--cut, var(--card))" stroke-width="1.5" stroke-linecap="round"/></svg>',
+    snow: '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>',
+    heart: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.6A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20z" stroke-linejoin="round"/></svg>'
+  };
+  function dial(level, size) {
+    var cx = 24, cy = 25, r = 18, segs = '', i;
+    for (i = 1; i <= 5; i++) {
+      var a0 = (150 + (i - 1) * 48 + 3) * Math.PI / 180, a1 = (150 + i * 48 - 3) * Math.PI / 180;
+      segs += '<path d="M' + (cx + r * Math.cos(a0)).toFixed(2) + ' ' + (cy + r * Math.sin(a0)).toFixed(2) + 'A' + r + ' ' + r + ' 0 0 1 ' + (cx + r * Math.cos(a1)).toFixed(2) + ' ' + (cy + r * Math.sin(a1)).toFixed(2) + '" stroke="' + (i <= level ? 'var(--l' + i + ')' : 'var(--line)') + '"/>';
+    }
+    var a = (150 + (level - 0.5) * 48) * Math.PI / 180;
+    return '<svg class="dial" width="' + size + '" height="' + size + '" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke-width="5.5">' + segs + '</g>' +
+      '<circle cx="24" cy="25" r="9.6" fill="var(--card)" stroke="var(--ink)" stroke-width="1.6"/>' +
+      '<path d="M' + (cx + 9.6 * Math.cos(a)).toFixed(2) + ' ' + (cy + 9.6 * Math.sin(a)).toFixed(2) + 'L' + (cx + 13.6 * Math.cos(a)).toFixed(2) + ' ' + (cy + 13.6 * Math.sin(a)).toFixed(2) + '" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round"/>' +
+      '<text x="24" y="29.6" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="12.5" fill="var(--ink)">' + level + '</text></svg>';
+  }
+  function foodiBadge(r) {
+    if (r.foodi.mode === 'full') return '<span class="badge">' + ICON.foodi + 'Foodi</span>';
+    if (r.foodi.mode === 'part') return '<span class="badge part">' + ICON.foodi + 'Foodi + موقد</span>';
+    if (r.foodi.nocook) return '<span class="badge plain">بلا طبخ</span>';
+    return '';
+  }
+
+  // ---------- quantities, written the way Arabic recipes write them: ربع، نصف، 1 ونصف
+  var FR = { '0.25': 'ربع', '0.5': 'نصف', '0.75': 'ثلاثة أرباع' };
+  function frac(v, step) {
+    var r = Math.round(v / step) * step; if (r <= 0) r = step;
+    var w = Math.floor(r + 1e-9), f = (r - w).toFixed(2).replace(/0+$/, '').replace(/\.$/, '');
+    return { v: r, t: w ? (FR[f] ? w + ' و' + FR[f] : String(w)) : (FR[f] || '') };
+  }
+  function amount(q, unit, n) {
+    var t = q * n, f, r;
+    if (unit === 'g' || unit === 'ml') {
+      r = t < 10 ? Math.round(t) : t < 250 ? Math.round(t / 5) * 5 : Math.round(t / 10) * 10; if (r === 0) r = 1;
+      if (r >= 1000) return { t: (r / 1000).toFixed(1).replace(/\.0$/, '') + (unit === 'g' ? ' كغ' : ' لتر') };
+      return { t: r + (unit === 'g' ? ' غ' : ' مل') };
+    }
+    if (unit === 'tsp') {
+      if (t >= 3) { f = frac(t / 3, t / 3 >= 3 ? 0.5 : 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة كبيرة', 'ملاعق كبيرة') }; }
+      f = frac(t, 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة صغيرة', 'ملاعق صغيرة') };
+    }
+    if (unit === 'tbsp') { f = frac(t, t >= 4 ? 0.5 : 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة كبيرة', 'ملاعق كبيرة') }; }
+    if (unit === 'pc' || unit === 'can') { f = frac(t, t >= 3 ? 0.5 : 0.25); return { t: f.t, many: f.v >= 3 && f.v < 11 }; }
+    if (unit === 'pinch') return { t: n >= 3 ? 'رشة كبيرة' : 'رشة' };
+    return { t: '' };
+  }
+  function ingName(key, many) { var g = ING[key]; if (!g) return key; return Array.isArray(g.n) ? g.n[many ? 1 : 0] : g.n; }
+  function shoppingList(r, n) {
+    var order = [], sum = {};
+    r.groups.forEach(function (g) { g[1].forEach(function (it) { var k = it[0] + '|' + it[2]; if (!(k in sum)) { sum[k] = 0; order.push([it[0], it[2]]); } sum[k] += it[1]; }); });
+    var lines = [r.name + ' (' + mealsTxt(n) + ')', ''];
+    order.forEach(function (o) { var a = amount(sum[o[0] + '|' + o[1]], o[1], n); if (o[1] === 'taste') { lines.push('- ' + ingName(o[0])); return; } lines.push('- ' + (a.t ? a.t + ' ' : '') + ingName(o[0], a.many)); });
+    return lines.join('\n');
+  }
+
+  // ---------- recipe list
+  R.forEach(function (r) { var names = []; r.groups.forEach(function (g) { g[1].forEach(function (it) { names.push(ingName(it[0])); }); }); r._hay = norm(r.name + ' ' + r.blurb + ' ' + catOf(r) + ' ' + names.join(' ') + ' ' + (r.hayEn || '')); });
+  // Each search word must start a word in the recipe text, after an optional و/ف/ب/ك/ل and ال,
+  // so حمص finds الحمص and بالحمص but not محمّص.
+  function words(q) {
+    return norm(q).split(/\s+/).filter(Boolean).map(function (w) {
+      w = w.replace(/^[وبفك]?ال(?=\S{2,})/, '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return new RegExp('(^|[^ء-يa-z0-9])(?:[وفبكل]?(?:ال)?|لل)' + w);
+    });
+  }
+  function matches(r) {
+    if (S.cat !== 'all' && r.cat !== S.cat) return false;
+    if (S.foodi && r.foodi.mode === 'none') return false;
+    if (S.freeze && !r.freeze) return false;
+    if (S.cold && r.serve === 'hot') return false;
+    if (S.quick && r.total > 30) return false;
+    if (S.fav && !S.favs[r.id]) return false;
+    if (S.untried && rated(r.id)) return false;
+    var lv = Object.keys(S.levels); if (lv.length && !S.levels[r.level]) return false;
+    if (S.q) { for (var i = 0; i < S.qw.length; i++) if (!S.qw[i].test(r._hay)) return false; }
+    return true;
+  }
+  function current() {
+    var list = R.filter(matches);
+    var by = { time: function (a, b) { return a.total - b.total || a._i - b._i; }, level: function (a, b) { return a.level - b.level || a.total - b.total; }, kcal: function (a, b) { return a.m[0] - b.m[0]; }, protein: function (a, b) { return b.m[1] - a.m[1]; } }[S.sort];
+    if (by) list.sort(by);
+    return list;
+  }
+  function card(r) {
+    return '<article class="card"><a class="hit" href="#' + r.id + '" aria-label="' + esc(r.name) + '"></a>' +
+      '<div class="pic"><img src="' + pic(r.id) + '" alt="" width="960" height="720" loading="lazy">' + foodiBadge(r) + rbadge(r) + '</div>' +
+      '<button class="heart" type="button" data-fav="' + r.id + '" aria-pressed="' + (S.favs[r.id] ? 'true' : 'false') + '" aria-label="احفظ ' + esc(r.name) + '">' + ICON.heart + '</button>' +
+      '<div class="body"><span class="cat">' + catOf(r) + '</span><h3>' + esc(r.name) + '</h3>' +
+      '<div class="line">' + dial(r.level, 26) + '<b>' + LEVEL[r.level] + '</b><span>' + minTxt(r.total) + '</span></div>' +
+      '<div class="nums"><b>' + r.m[0] + '</b> ' + kcalWord(r.m[0]) + ' · <b>' + r.m[1] + ' غ</b> بروتين</div></div></article>';
+  }
+  function anyFilter() { return S.cat !== 'all' || S.foodi || S.freeze || S.cold || S.quick || S.fav || S.untried || Object.keys(S.levels).length || S.q; }
+  function renderGrid() {
+    var list = current();
+    $('grid').innerHTML = list.length ? list.map(card).join('') : '<div class="empty"><b>لا توجد وصفة تطابق هذه الفلاتر.</b><br>جرّب إزالة أحدها، أو امسحها كلها.</div>';
+    $('count').textContent = list.length === R.length ? 'جميع الوصفات الـ' + R.length : list.length + ' من ' + R.length + ' وصفة';
+    $('clear').hidden = !anyFilter();
+  }
+  function renderControls() {
+    $('tabs').innerHTML = CATS.map(function (c) { var n = c[0] === 'all' ? R.length : R.filter(function (r) { return r.cat === c[0]; }).length; return '<button type="button" class="tab" data-cat="' + c[0] + '" aria-pressed="' + (S.cat === c[0]) + '">' + c[1] + '<small>' + n + '</small></button>'; }).join('');
+    var chips = [['foodi', ICON.foodi + 'Ninja Foodi'], ['freeze', ICON.snow + 'تصلح للتجميد'], ['cold', 'بلا ميكروويف'], ['quick', '30 دقيقة أو أقل'], ['fav', 'المحفوظة'], ['untried', 'لم أجرّبها بعد']];
+    $('chips').innerHTML = chips.map(function (c) { return '<button type="button" class="chip" data-chip="' + c[0] + '" aria-pressed="' + (!!S[c[0]]) + '">' + c[1] + '</button>'; }).join('');
+    $('levels').innerHTML = [1, 2, 3, 4, 5].map(function (l) { return '<button type="button" class="level" data-level="' + l + '" aria-pressed="' + (!!S.levels[l]) + '" aria-label="الصعوبة ' + l + ' من 5، ' + LEVEL[l] + '">' + dial(l, 40) + '<span>' + LEVEL[l] + '</span></button>'; }).join('');
+  }
+  function sync() {
+    Array.prototype.forEach.call(document.querySelectorAll('#tabs .tab'), function (b) { b.setAttribute('aria-pressed', String(S.cat === b.dataset.cat)); });
+    Array.prototype.forEach.call(document.querySelectorAll('#chips .chip'), function (b) { b.setAttribute('aria-pressed', String(!!S[b.dataset.chip])); });
+    Array.prototype.forEach.call(document.querySelectorAll('#levels .level'), function (b) { b.setAttribute('aria-pressed', String(!!S.levels[b.dataset.level])); });
+  }
+  function renderFacts() {
+    var k = R.map(function (r) { return r.m[0]; }), p = R.map(function (r) { return r.m[1]; }), f = R.filter(function (r) { return r.foodi.mode !== 'none'; }).length, fr = R.filter(function (r) { return r.freeze; }).length;
+    var kmin = Math.min.apply(0, k), kmax = Math.max.apply(0, k), pmin = Math.min.apply(0, p), pmax = Math.max.apply(0, p);
+    $('hero-tape').textContent = R.length + ' ' + pl(R.length, 'وجبة', 'وجبات') + ' غداء للعمل';
+    $('facts').innerHTML = '<li><b>' + R.length + '</b><span>' + pl(R.length, 'وصفة', 'وصفات') + '، أي أكثر من وصفة لكل أسبوع في السنة</span></li>' +
+      '<li><b>' + kmin + '–' + kmax + '</b><span>' + kcalWord(kmax) + ' لكل وجبة</span></li>' +
+      '<li><b>' + pmin + '–' + pmax + ' غ</b><span>بروتين لكل وجبة</span></li>' +
+      '<li><b>' + f + '</b><span>' + pl(f, 'وصفة', 'وصفات') + ' تُطبخ في Ninja Foodi، و' + fr + ' تتجمّد جيدًا</span></li>';
+    var avg = Math.round(p.reduce(function (a, b) { return a + b; }, 0) / p.length);
+    $('g-protein').textContent = 'من ' + pmin + ' إلى ' + pmax + ' غ لكل وجبة، و' + avg + ' غ في المتوسط،';
+    var full = R.filter(function (r) { return r.foodi.mode === 'full'; }).length;
+    $('g-foodi').textContent = full + ' ' + pl(full, 'وصفة', 'وصفات') + ' تُطبخ فيه بالكامل، و' + (f - full) + ' أخرى تستخدمه للجزء الرئيسي. لكل منها إعداد ووقت خاصّان بها.';
+    $('g-dials').innerHTML = [1, 2, 3, 4, 5].map(function (l) { return '<div>' + dial(l, 56) + '<b>' + LEVEL[l] + '</b><span>' + LEVELWHAT[l] + '</span></div>'; }).join('');
+    $('k-full').innerHTML = ICON.foodi + 'Foodi'; $('k-part').innerHTML = ICON.foodi + 'Foodi + موقد';
+    if (Object.keys(CRED).length) {
+      var allAi = R.every(function (r) { return (CRED[r.id] || '').indexOf('Gemini') >= 0; });
+      $('pic-note').textContent = allAi
+        ? 'كل صور الكتاب، للوجبات والصوصات، رسومات مولّدة بالذكاء الاصطناعي (Gemini).'
+        : 'مصدر كل صورة وجبة مكتوب تحتها: إمّا صورة حقيقية من Unsplash مع اسم المصوّر، وإمّا رسمة مولّدة بالذكاء الاصطناعي (Gemini). صور الصوصات رسومات مولّدة بالذكاء الاصطناعي (Gemini).';
+    }
+  }
+
+  // ---------- stars
+  var STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.85 5.95 6.45.8-4.75 4.45 1.2 6.45L12 17.1l-5.75 3.15 1.2-6.45L2.7 9.35l6.45-.8z"/></svg>';
+  function starsRO(n) {
+    var s = '';
+    for (var i = 1; i <= 5; i++) s += STAR.replace('<svg ', '<svg class="' + (i <= n ? 'on' : '') + '" ');
+    return '<span class="ro" role="img" aria-label="' + n + ' من 5">' + s + '</span>';
+  }
+  function recipesTxt(n) { return n === 1 ? 'وصفة واحدة' : n === 2 ? 'وصفتين' : n + ' ' + pl(n, 'وصفة', 'وصفات'); }
+  function saucesTxt(n) { return n === 1 ? 'صوص واحد' : n === 2 ? 'صوصين' : n + ' ' + pl(n, 'صوصًا', 'صوصات'); }
+
+  // ---------- my ratings. Kept in the reader's own account when the page can reach it, so they follow
+  // the reader from phone to computer; otherwise in this browser only. Nobody else can read them.
+  // A recipe is rated under its own id, a sauce under "sauce-" + its id (no recipe id starts with that).
+  var RW = ['', 'لم تعجبني', 'مقبولة', 'جيدة', 'لذيذة', 'من المفضّلات'];
+  var RWS = ['', 'لم يعجبني', 'مقبول', 'جيد', 'لذيذ', 'من المفضّلات'];
+  var SK = 'sauce-';
+  function isSauceKey(k) { return k.indexOf(SK) === 0 && !!bySauce[k.slice(SK.length)]; }
+  function isKey(k) { return !!byId[k] || isSauceKey(k); }
+  function rwOf(k) { return isSauceKey(k) ? RWS : RW; }
+  var MON = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+  var RTK = 'prepbook.ar.ratings.v1', RT = {};
+  var rt = { mode: 'local', cacheUid: null, uid: null, col: null, unsub: null, busy: {}, again: {}, retry: {}, merged: false, warned: false };
+  // a removed rating stays as s = 0 with its time, so other devices learn about the removal
+  function cleanR(x) {
+    x = x || {}; var s = Math.round(+x.s || 0);
+    return { s: s >= 1 && s <= 5 ? s : 0, n: typeof x.n === 'string' ? x.n.slice(0, 600) : '', d: /^\d{4}-\d{2}-\d{2}$/.test(x.d || '') ? x.d : '', u: +x.u > 0 ? +x.u : 0 };
+  }
+  try {
+    var rs = JSON.parse(localStorage.getItem(RTK) || '{}');
+    rt.cacheUid = typeof rs.uid === 'string' ? rs.uid : null;
+    Object.keys(rs.e || {}).forEach(function (id) { if (isKey(id)) RT[id] = cleanR(rs.e[id]); });
+  } catch (e) {}
+  function rtSave() { try { localStorage.setItem(RTK, JSON.stringify({ uid: rt.uid || rt.cacheUid, e: RT })); } catch (e) {} }
+  function rated(id) { var x = RT[id]; return x && x.s > 0 ? x : null; }
+  function rbadgeK(k) { var x = rated(k); return x ? '<span class="rbadge" aria-label="تقييمك ' + x.s + ' من 5">' + STAR + x.s + '</span>' : ''; }
+  function rbadge(r) { return rbadgeK(r.id); }
+  function today() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function whenTxt(iso) {
+    if (!iso) return '';
+    var p = iso.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2]), now = new Date(); now.setHours(0, 0, 0, 0);
+    var diff = Math.round((now - d) / 864e5);
+    if (diff === 0) return 'اليوم';
+    if (diff === 1) return 'أمس';
+    if (diff === 2) return 'قبل يومين';
+    if (diff > 2 && diff < 7) return 'قبل ' + diff + ' أيام';
+    return 'في ' + (+p[2]) + ' ' + MON[+p[1] - 1] + (+p[0] !== now.getFullYear() ? ' ' + p[0] : '');
+  }
+  var SYNC = {
+    loading: 'جارٍ تحميل تقييماتك المحفوظة…',
+    cloud: 'تقييماتك محفوظة في حسابك، فتجدها على الهاتف والكمبيوتر.',
+    local: 'تقييماتك محفوظة على هذا الجهاز فقط.',
+    slow: 'لم نصل إلى تقييماتك المحفوظة بعد، فقد لا يكون هذا آخر ما حفظته.'
+  };
+  function setSync(st) { $('tried-sync').textContent = SYNC[st] || ''; }
+  function goLocal() { rt.mode = 'local'; if (rt.unsub) { try { rt.unsub(); } catch (e) {} rt.unsub = null; } setSync('local'); }
+  // one write at a time per recipe; a change made while one is in flight goes out right after it
+  function rtPush(id) {
+    if (rt.mode !== 'cloud' || !rt.col || !RT[id]) return;
+    if (rt.busy[id]) { rt.again[id] = true; return; }
+    rt.busy[id] = true;
+    var x = RT[id];
+    rt.col.doc(id).set({ s: x.s, n: x.n, d: x.d, u: x.u }).then(function () {
+      rt.busy[id] = false; rt.retry[id] = 0;
+      if (rt.again[id]) { rt.again[id] = false; rtPush(id); }
+    }, function (err) {
+      rt.busy[id] = false;
+      var code = err && err.code;
+      if (['invalid_argument', 'revoked', 'not_granted', 'capability_disabled', 'capability_removed', 'transform_error'].indexOf(code) >= 0) { rt.again[id] = false; goLocal(); return; }
+      if (code !== 'quota_exceeded' && code !== 'resource_exhausted' && !rt.retry[id]) { rt.retry[id] = 1; setTimeout(function () { rtPush(id); }, 600 + Math.random() * 1400); return; }
+      rt.again[id] = false;
+      if (!rt.warned) { rt.warned = true; toast('تعذّر حفظ التقييم في حسابك الآن، وبقي محفوظًا في هذا المتصفح.'); }
+    });
+  }
+  function rtInit() {
+    var c = window.claude;
+    if (!c || typeof c.use !== 'function') { setSync('local'); return; }
+    setSync('loading');
+    var done = false, timer = setTimeout(function () { if (!done) setSync(rt.mode === 'cloud' ? 'slow' : 'local'); }, 10000);
+    function finish(st) { if (done) return; done = true; clearTimeout(timer); setSync(st); }
+    Promise.all([c.use('db'), c.use('user')]).then(function (a) {
+      var db = a[0], user = a[1];
+      if (!db || !user) { finish('local'); return; }
+      return user.id().then(function (uid) {
+        if (!uid) { finish('local'); return; }
+        if (rt.cacheUid && rt.cacheUid !== uid) { RT = {}; paintRatings(); }   // this browser was last used by another account
+        rt.uid = uid;
+        try { rt.col = db.collection('data/users/' + uid); } catch (e) { finish('local'); return; }
+        rt.mode = 'cloud';
+        rt.unsub = rt.col.onSnapshot(function (snap) {
+          var remote = {}, up = [];
+          snap.docs.forEach(function (d) { if (d.exists && isKey(d.id)) remote[d.id] = cleanR(d.data()); });
+          Object.keys(remote).forEach(function (id) { if (!RT[id] || remote[id].u >= RT[id].u) RT[id] = remote[id]; });
+          if (!snap.metadata.fromCache) {
+            if (!rt.merged) {
+              rt.merged = true;
+              // ratings made here before the account answered (or while offline) go up once
+              Object.keys(RT).forEach(function (id) { if (RT[id].u && (!remote[id] || RT[id].u > remote[id].u)) up.push(id); });
+            }
+            finish('cloud');
+          }
+          rtSave(); paintRatings();
+          if (up.length) setTimeout(function () { up.forEach(rtPush); }, 0);
+        }, function () { goLocal(); finish('local'); });
+      });
+    }).catch(function () { finish('local'); });
+  }
+  function saveRating(id, patch) {
+    var cur = RT[id] || cleanR({}), nx = { s: cur.s, n: cur.n, d: cur.d, u: Date.now() };
+    for (var k in patch) nx[k] = patch[k];
+    if (nx.s > 0 && !nx.d) nx.d = today();
+    if (!nx.s) { nx.n = ''; nx.d = ''; }
+    RT[id] = cleanR(nx); rtSave(); rtPush(id);
+  }
+  var noteT = null;
+  // the rating key of what the sheet shows now (a recipe or a sauce), or null
+  function openKey() { return openKind === 'recipe' && byId[openId] ? openId : openKind === 'sauce' && bySauce[openId] ? SK + openId : null; }
+  function flushNote() {
+    clearTimeout(noteT); noteT = null;
+    var t = $('s-note'), k = openKey(); if (!t || !k) return;
+    var x = rated(k); if (x && x.n !== t.value.slice(0, 600)) { saveRating(k, { n: t.value }); renderTried(); }
+  }
+  function rateHtml(k) {
+    var x = rated(k), s = x ? x.s : 0, b = '', sauce = isSauceKey(k), W = rwOf(k);
+    for (var i = 1; i <= 5; i++) b += '<button type="button" class="star" data-star="' + i + '" aria-pressed="' + (i <= s) + '" aria-label="' + i + ' من 5، ' + W[i] + '">' + STAR + '</button>';
+    return '<div class="rate" id="s-rate"><div class="rrow"><span class="rq">' + (x ? 'تقييمك' : sauce ? 'جرّبته؟ قيّمه' : 'جرّبتها؟ قيّمها') + '</span><div class="stars" role="group" aria-label="' + (sauce ? 'تقييمك للصوص' : 'تقييمك للوصفة') + '">' + b + '</div></div>' +
+      (x ? '<div class="rmeta"><b>' + W[s] + '</b><span>· ' + (sauce ? 'جرّبته ' : 'جرّبتها ') + whenTxt(x.d) + '</span><button type="button" class="linkbtn" data-unrate="' + k + '">إزالة التقييم</button></div>' +
+        '<label class="rnote"><span>ملاحظاتي</span><textarea id="s-note" rows="2" maxlength="600" placeholder="' + (sauce ? 'مثلًا: زدت الثوم، أو قلّلت الحرّ' : 'مثلًا: زدت الليمون، أو تحتاج ملحًا أقل') + '">' + esc(x.n) + '</textarea></label>' : '') +
+      '</div>';
+  }
+  // everything rated: recipes in book order, then sauces
+  function triedItems() {
+    var out = [];
+    R.forEach(function (r) { if (rated(r.id)) out.push({ k: r.id, sauce: false, name: r.name, img: pic(r.id) }); });
+    SAU.forEach(function (s) { var k = SK + s.id; if (rated(k)) out.push({ k: k, sauce: true, name: s.name, img: spic(s) }); });
+    return out;
+  }
+  function trow(e) {
+    var x = RT[e.k];
+    return '<a class="trow" href="#' + e.k + '"><img src="' + e.img + '" alt="" width="960" height="720" loading="lazy"><div><b>' + esc(e.name) + (e.sauce ? ' <span class="tkind">صوص</span>' : '') + '</b>' +
+      '<div class="tst">' + starsRO(x.s) + '<strong>' + rwOf(e.k)[x.s] + '</strong><span>· ' + whenTxt(x.d) + '</span></div>' +
+      (x.n ? '<p class="tnote">' + esc(x.n) + '</p>' : '') + '</div></a>';
+  }
+  function countTxt(list) {
+    var ns = list.filter(function (e) { return e.sauce; }).length, nr = list.length - ns;
+    return [nr ? recipesTxt(nr) : '', ns ? saucesTxt(ns) : ''].filter(Boolean).join(' و');
+  }
+  function renderTried() {
+    var list = triedItems(), n = list.length, bar = $('tried-bar'), out = $('tried-list');
+    if (!n) {
+      $('tried-lead').textContent = 'لم تقيّم أي وصفة أو صوص بعد.';
+      bar.hidden = true;
+      out.innerHTML = '<div class="empty tempty"><b>هنا تظهر الوصفات والصوصات التي جرّبتها.</b><span>افتح أي وصفة أو صوص، وبعد أن تجرّبه اضغط على النجوم تحت اسمه. سيظهر هنا مع تقييمك وملاحظاتك، فتعرف ماذا تعيد.</span><span class="tbtns"><a class="btn solid" href="#recipes">تصفّح الوصفات</a><a class="btn" href="#sauces">تصفّح الصوصات</a></span></div>';
+      return;
+    }
+    var ns = list.filter(function (e) { return e.sauce; }).length, nr = n - ns, parts = [];
+    if (nr) parts.push('<b>' + nr + '</b> من ' + R.length + ' وصفة');
+    if (ns) parts.push('<b>' + ns + '</b> من ' + SAU.length + ' ' + pl(SAU.length, 'صوصًا', 'صوصات'));
+    var avg = list.reduce(function (a, e) { return a + RT[e.k].s; }, 0) / n;
+    $('tried-lead').innerHTML = 'جرّبت ' + parts.join(' و') + '، ومتوسط تقييمك <b>' + (Math.round(avg * 10) / 10) + '</b> من 5.';
+    bar.hidden = false;
+    Array.prototype.forEach.call(bar.querySelectorAll('[data-tsort]'), function (b) { b.setAttribute('aria-pressed', String(b.dataset.tsort === S.tsort)); });
+    var byDate = function (a, b) { return (RT[b.k].d || '').localeCompare(RT[a.k].d || '') || RT[b.k].u - RT[a.k].u; };
+    if (S.tsort === 'date') { out.innerHTML = '<div class="trows">' + list.sort(byDate).map(trow).join('') + '</div>'; return; }
+    var html = '';
+    [5, 4, 3, 2, 1].forEach(function (s) {
+      var g = list.filter(function (e) { return RT[e.k].s === s; }).sort(byDate);
+      var allSauce = g.every(function (e) { return e.sauce; });
+      if (g.length) html += '<section class="tgroup"><h2>' + starsRO(s) + '<span>' + (allSauce ? RWS : RW)[s] + '</span><small>' + countTxt(g) + '</small></h2><div class="trows">' + g.map(trow).join('') + '</div></section>';
+    });
+    out.innerHTML = html;
+  }
+  function paintRatings() {
+    renderGrid(); renderSauceGrid(); renderTried();
+    var k = openKey();
+    if (k) {
+      var el = $('s-rate'), ae = document.activeElement;
+      if (el && !(ae && ae.id === 's-note')) el.outerHTML = rateHtml(k);
+    }
+  }
+
+  // ---------- sauces: cards like the recipes, and each sauce opens in the same sheet
+  function spic(s) { return 'img/sauce-' + s.id + '.webp'; }
+  var SGROUPS = []; SAU.forEach(function (s) { if (SGROUPS.indexOf(s.group) < 0) SGROUPS.push(s.group); });
+  var HEAT = ['غير حار', 'خفيف الحرارة', 'حار', 'حار جدًا'];
+  function scard(s) {
+    var n = s._recipes.length;
+    return '<article class="card scard"><a class="hit" href="#sauce-' + s.id + '" aria-label="' + esc(s.name) + '"></a>' +
+      '<div class="pic"><img src="' + spic(s) + '" alt="" width="960" height="720" loading="lazy">' + (s.heat ? '<span class="badge heat">' + HEAT[s.heat] + '</span>' : '') + rbadgeK(SK + s.id) + '</div>' +
+      '<div class="body"><span class="cat">' + esc(s.group) + '</span><h3>' + esc(s.name) + '</h3>' +
+      '<div class="nums"><b>' + s.m[0] + '</b> ' + kcalWord(s.m[0]) + ' للحصة · تبقى ' + daysTxt(s.fridge) + '</div>' +
+      (n ? '<div class="line">مقترح مع ' + recipesTxt(n) + '</div>' : '') + '</div></article>';
+  }
+  function renderSauceGrid() {
+    $('sgrid').innerHTML = SAU.filter(function (s) { return S.scat === 'all' || s.group === S.scat; }).map(scard).join('');
+    Array.prototype.forEach.call(document.querySelectorAll('#stabs .tab'), function (b) { b.setAttribute('aria-pressed', String(b.dataset.scat === S.scat)); });
+  }
+  function renderSauces() {
+    var col = function (k) { return SAU.map(function (s) { return k === 'kc' ? s.m[0] : s[k]; }); };
+    var lo = function (a) { return Math.min.apply(0, a); }, hi = function (a) { return Math.max.apply(0, a); };
+    var k = col('kc'), mk = col('makes'), fr = col('fridge');
+    $('sauce-count').textContent = SAU.length >= 11 ? SAU.length + ' صوصًا' : SAU.length + ' ' + pl(SAU.length, 'صوص', 'صوصات');
+    $('sfacts').innerHTML = '<li><b>' + SAU.length + '</b><span>' + (SAU.length >= 11 ? 'صوصًا مشهورًا' : pl(SAU.length, 'صوص مشهور', 'صوصات مشهورة')) + ' بنسخة بيتية</span></li>' +
+      '<li><b>' + lo(k) + '–' + hi(k) + '</b><span>' + kcalWord(hi(k)) + ' للحصة</span></li>' +
+      '<li><b>' + lo(mk) + '–' + hi(mk) + '</b><span>' + pl(hi(mk), 'حصة', 'حصص') + ' في كل عبوة</span></li>' +
+      '<li><b>' + lo(fr) + '–' + hi(fr) + '</b><span>' + pl(hi(fr), 'يومًا', 'أيام') + ' في الثلاجة</span></li>';
+    $('stabs').innerHTML = [['all', 'الكل']].concat(SGROUPS.map(function (g) { return [g, g]; })).map(function (c) {
+      var n = c[0] === 'all' ? SAU.length : SAU.filter(function (s) { return s.group === c[0]; }).length;
+      return '<button type="button" class="tab" data-scat="' + esc(c[0]) + '" aria-pressed="' + (S.scat === c[0]) + '">' + esc(c[1]) + '<small>' + n + '</small></button>';
+    }).join('');
+    renderSauceGrid();
+  }
+
+  // ---------- the sheet: one recipe or one sauce over the page it was opened from
+  var openId = null, openKind = null, lastFocus = null;
+  function storeTip(r, n) {
+    if (n === 1) return '<b>وجبة واحدة تُحضَّر طازجة.</b> تبقى حتى ' + daysTxt(r.fridge) + ' في الثلاجة إن تغيّرت خططك.';
+    if (n <= r.fridge) return '<b>' + (n === 2 ? 'الوجبتان تبقيان في الثلاجة.' : 'الوجبات الـ' + n + ' تبقى كلها في الثلاجة.') + '</b> تؤكل خلال ' + daysTxt(r.fridge) + ' من يوم الطبخ.';
+    if (r.freeze) return '<b>تبقى في الثلاجة ' + daysTxt(r.fridge) + '.</b> جمّد ' + mealsTxt(n - r.fridge) + ' يوم الطبخ، وانقل كل وجبة إلى الثلاجة في الليلة التي تسبق يومها. ' + esc(r.freezeNote);
+    return '<b>تبقى ' + daysTxt(r.fridge) + ' ولا تتجمّد جيدًا.</b> اطبخ ' + mealsTxt(r.fridge) + ' الآن، وحضّر الباقي طازجًا في منتصف الأسبوع.';
+  }
+  function ingLi(it, n, id) {
+    var a = amount(it[1], it[2], n), g2 = ING[it[0]];
+    var amt = it[2] === 'taste' ? 'حسب الذوق' : a.t;
+    var note = it[3] ? (a.many && it[4] ? it[4] : it[3]) : '';
+    return '<li><label for="' + id + '"><input type="checkbox" id="' + id + '"><span class="amt">' + amt + '</span><span class="nm">' + esc(ingName(it[0], a.many)) + (note ? '<small>، ' + esc(note) + '</small>' : '') + (g2 && g2.check ? '<a class="chk" href="#guide">راجع الملصق</a>' : '') + '</span></label></li>';
+  }
+  function ingHtml(r, n) {
+    var k = 0;
+    return r.groups.map(function (g) {
+      return '<div class="grp"><h4>' + esc(g[0]) + '</h4><ul class="ings">' + g[1].map(function (it) { return ingLi(it, n, 'ing-' + (k++)); }).join('') + '</ul></div>';
+    }).join('');
+  }
+  function renderScaled(r) {
+    var n = S.meals, kc = r.m[0] * n;
+    $('s-ings').innerHTML = ingHtml(r, n);
+    $('s-for').textContent = 'مكوّنات ' + mealsTxt(n);
+    $('s-tip').innerHTML = storeTip(r, n);
+    $('s-total').textContent = 'هذه الدفعة: ' + kc.toLocaleString('en') + ' ' + kcalWord(kc) + ' و' + (r.m[1] * n) + ' غ بروتين، موزّعة على ' + mealsTxt(n) + '.';
+    Array.prototype.forEach.call(document.querySelectorAll('#s-meals .meal'), function (b) { b.setAttribute('aria-pressed', String(+b.dataset.n === n)); });
+  }
+  function stepsHtml(steps, pre) {
+    return '<ol class="steps">' + steps.map(function (s, i) { return '<li><label for="' + pre + i + '"><span>' + esc(s) + '</span><input type="checkbox" id="' + pre + i + '" aria-label="تمّت الخطوة ' + (i + 1) + '"></label></li>'; }).join('') + '</ol>';
+  }
+  function sheetHtml(r) {
+    var f = r.foodi, list = current(), idx = list.map(function (x) { return x.id; }).indexOf(r.id), order = idx >= 0 ? list : R, i = idx >= 0 ? idx : r._i;
+    var prev = order[(i - 1 + order.length) % order.length], next = order[(i + 1) % order.length];
+    var kc = r.m[0], pk = Math.round(r.m[1] * 4 / kc * 100), ck = Math.round(r.m[2] * 4 / kc * 100), fk = Math.max(0, 100 - pk - ck);
+    var foodi = f.mode === 'none'
+      ? '<div class="foodi none"><div class="hd">' + ICON.foodi + 'Ninja Foodi</div><p>' + (f.nocook ? 'لا طبخ في هذه الوصفة، فيبقى الـFoodi في الخزانة.' : 'ليست وصفة Foodi. تحتاج قدرًا أو مقلاة على الموقد.') + '</p></div>'
+      : '<div class="foodi"><div class="hd">' + ICON.foodi + 'Ninja Foodi<span class="pill">' + (f.mode === 'full' ? 'الوصفة كاملة' : 'الجزء الرئيسي') + '</span></div><div class="set"><bdi>' + esc(f.fn) + '</bdi> · <bdi>' + esc(f.set) + '</bdi> · <bdi>' + esc(f.time) + '</bdi></div><p>' + esc(f.how) + '</p>' + (f.also ? '<p class="also">يلزمك أيضًا: ' + esc(f.also) + '.</p>' : '') + '</div>';
+    return '<button class="close" type="button" id="s-close" aria-label="أغلق الوصفة">×</button>' +
+      '<div class="s-top"><div class="s-pic"><img src="' + pic(r.id) + '" alt="صورة ' + esc(r.name) + '" width="960" height="720"><span class="tape">' + catOf(r) + '</span></div>' +
+      '<div class="s-head"><h2 id="s-title">' + esc(r.name) + '</h2><p class="blurb">' + esc(r.blurb) + '</p>' +
+      '<button class="btn savebtn" type="button" data-fav="' + r.id + '" aria-pressed="' + (S.favs[r.id] ? 'true' : 'false') + '">' + ICON.heart + '<span>' + (S.favs[r.id] ? 'محفوظة' : 'احفظ الوصفة') + '</span></button>' +
+      rateHtml(r.id) +
+      (CRED[r.id] ? '<div class="credit">' + esc(CRED[r.id]) + '</div>' : '') + '</div></div>' +
+      '<div class="s-body">' +
+      '<div class="stats"><div class="stat diff">' + dial(r.level, 66) + '<div class="t"><b>' + r.level + ' من 5 · ' + LEVEL[r.level] + '</b><span>' + esc(r.why) + '</span></div></div>' +
+      '<div class="stat"><b>' + r.active + '<small>' + pl(r.active, 'دقيقة', 'دقائق') + '</small></b><span>وقت العمل</span></div><div class="stat"><b>' + r.total + '<small>' + pl(r.total, 'دقيقة', 'دقائق') + '</small></b><span>الوقت الكلي</span></div>' +
+      '<div class="stat"><b>' + r.m[0] + '</b><span>' + kcalWord(r.m[0]) + ' لكل وجبة</span></div><div class="stat"><b>' + r.m[1] + '<small>غ</small></b><span>بروتين لكل وجبة</span></div></div>' +
+      foodi +
+      '<section class="scaler"><h3>كم وجبة؟</h3><div class="meals" id="s-meals" role="group" aria-label="عدد الوجبات">' + [1, 2, 3, 4, 5].map(function (n) { return '<button type="button" class="meal" data-n="' + n + '" aria-pressed="false" aria-label="' + mealsTxt(n) + '">' + n + '</button>'; }).join('') + '</div><p class="tip" id="s-tip"></p></section>' +
+      '<div class="cols"><section class="sec"><div class="hd"><h3 id="s-for">المكوّنات</h3><button class="btn" type="button" id="s-copy">انسخ القائمة</button></div><div id="s-ings"></div></section>' +
+      '<section class="sec"><div class="hd"><h3>طريقة التحضير</h3></div>' + stepsHtml(r.steps, 'st-') + '</section></div>' +
+      '<section class="sec"><div class="hd"><h3>التعبئة والتخزين</h3></div><div class="store"><div class="stat"><b>' + (r.fridge === 2 ? 'يومان' : daysTxt(r.fridge)) + '</b><span>في الثلاجة</span></div><div class="stat"><b>' + (r.freeze ? 'نعم' : 'لا') + '</b><span>في الفريزر</span></div><div class="stat"><b>' + SERVE[r.serve] + '</b><span>وقت الغداء</span></div></div>' +
+      '<p class="para">' + esc(r.reheat) + '</p><p class="para">' + esc(r.freezeNote) + '</p></section>' +
+      ((r.sauces || []).length ? '<section class="sec"><div class="hd"><h3>صوصات تليق بها</h3></div><div class="schips">' + r.sauces.map(function (id) { var s = bySauce[id]; return '<a class="schip" href="#sauce-' + s.id + '"><img src="' + spic(s) + '" alt="" width="52" height="39" loading="lazy"><span>' + esc(s.name) + '</span><small>' + s.m[0] + ' ' + kcalWord(s.m[0]) + '</small></a>'; }).join('') + '</div><p class="snote">السعرات لحصة الصوص، أي ملعقتين كبيرتين، وهي غير محسوبة في قيم الوصفة. اضغط على الصوص لترى طريقته.</p></section>' : '') +
+      '<section class="sec"><div class="hd"><h3>نصائح وبدائل</h3></div><ul class="tips">' + r.tips.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul></section>' +
+      '<section class="nutri" aria-label="القيم الغذائية لكل وجبة"><h3>القيم الغذائية</h3><div class="per">لكل وجبة، تقديرية</div><div class="cal"><span>السعرات</span><b>' + kc + '</b></div>' +
+      '<div class="row"><span><b>البروتين</b></span><span>' + r.m[1] + ' غ</span></div><div class="row"><span><b>الكربوهيدرات</b></span><span>' + r.m[2] + ' غ</span></div><div class="row"><span><b>الدهون</b></span><span>' + r.m[3] + ' غ</span></div>' +
+      '<div class="bar" aria-hidden="true"><i class="p" style="width:' + pk + '%"></i><i class="c" style="width:' + ck + '%"></i><i class="f" style="width:' + fk + '%"></i></div>' +
+      '<small>السعرات من البروتين ' + pk + '%، ومن الكربوهيدرات ' + ck + '%، ومن الدهون ' + fk + '%.</small><small id="s-total"></small></section>' +
+      '<nav class="pn" aria-label="وصفات أخرى"><a href="#' + prev.id + '"><span>السابقة</span><b>' + esc(prev.name) + '</b></a><a href="#' + next.id + '"><span>التالية</span><b>' + esc(next.name) + '</b></a></nav>' +
+      '</div>';
+  }
+  function sauceSheetHtml(s) {
+    var i = SAU.indexOf(s), prev = SAU[(i - 1 + SAU.length) % SAU.length], next = SAU[(i + 1) % SAU.length];
+    return '<button class="close" type="button" id="s-close" aria-label="أغلق الصوص">×</button>' +
+      '<div class="s-top"><div class="s-pic"><img src="' + spic(s) + '" alt="صورة ' + esc(s.name) + ' ومكوّناته" width="960" height="720"><span class="tape">' + esc(s.group) + '</span></div>' +
+      '<div class="s-head"><h2 id="s-title">' + esc(s.name) + '</h2><p class="blurb">' + esc(s.blurb) + '</p>' + rateHtml(SK + s.id) + '</div></div>' +
+      '<div class="s-body">' +
+      '<div class="stats sstats"><div class="stat"><b>' + s.m[0] + '</b><span>' + kcalWord(s.m[0]) + ' للحصة</span></div>' +
+      '<div class="stat"><b>' + s.makes + '</b><span>' + pl(s.makes, 'حصة', 'حصص') + ' في العبوة</span></div>' +
+      '<div class="stat"><b>' + s.fridge + '</b><span>' + pl(s.fridge, 'يومًا', 'أيام') + ' في الثلاجة</span></div>' +
+      '<div class="stat"><b>' + HEAT[s.heat || 0] + '</b><span>الحرارة</span></div></div>' +
+      '<div class="cols"><section class="sec"><div class="hd"><h3>المكوّنات</h3><span class="hdn">لعبوة واحدة</span></div><ul class="ings">' + s.items.map(function (it, k) { return ingLi(it, 1, 'sing-' + k); }).join('') + '</ul></section>' +
+      '<section class="sec"><div class="hd"><h3>الطريقة</h3></div>' + stepsHtml(s.steps, 'sst-') + '</section></div>' +
+      '<section class="sec"><div class="hd"><h3>يليق مع</h3></div><p class="para">' + esc(s.goes) + '</p>' + (s.tip ? '<p class="stip">' + esc(s.tip) + '</p>' : '') + '</section>' +
+      (s._recipes.length ? '<section class="sec"><div class="hd"><h3>مقترح مع هذه الوصفات</h3><span class="hdn">' + recipesTxt(s._recipes.length) + '</span></div><div class="pairs">' + s._recipes.map(function (r) { return '<a class="pair" href="#' + r.id + '"><img src="' + pic(r.id) + '" alt="" width="960" height="720" loading="lazy"><span>' + esc(r.name) + '</span></a>'; }).join('') + '</div></section>' : '') +
+      '<section class="nutri" aria-label="القيم الغذائية للحصة"><h3>القيم الغذائية</h3><div class="per">للحصة، أي ملعقتين كبيرتين، تقديرية</div><div class="cal"><span>السعرات</span><b>' + s.m[0] + '</b></div>' +
+      '<div class="row"><span><b>البروتين</b></span><span>' + s.m[1] + ' غ</span></div><div class="row"><span><b>الكربوهيدرات</b></span><span>' + s.m[2] + ' غ</span></div><div class="row"><span><b>الدهون</b></span><span>' + s.m[3] + ' غ</span></div></section>' +
+      '<nav class="pn" aria-label="صوصات أخرى"><a href="#sauce-' + prev.id + '"><span>السابق</span><b>' + esc(prev.name) + '</b></a><a href="#sauce-' + next.id + '"><span>التالي</span><b>' + esc(next.name) + '</b></a></nav>' +
+      '</div>';
+  }
+  function showSheet(kind, id, html, title) {
+    flushNote();
+    if (!openId) lastFocus = document.activeElement;
+    openId = id; openKind = kind;
+    $('sheet-in').innerHTML = html;
+    $('sheet').hidden = false; $('sheet').scrollTop = 0; document.documentElement.style.overflow = 'hidden';
+    document.title = title + ' · كتاب تحضير غداء العمل';
+    var c = $('s-close'); if (c) c.focus({ preventScroll: true });
+  }
+  function openRecipe(id) { var r = byId[id]; if (!r) return; showSheet('recipe', id, sheetHtml(r), r.name); renderScaled(r); }
+  function openSauce(id) { var s = bySauce[id]; if (!s) return; showSheet('sauce', id, sauceSheetHtml(s), s.name); }
+  function closeSheet() {
+    if (!openId) return;
+    flushNote(); openId = null; openKind = null;
+    $('sheet').hidden = true; $('sheet-in').innerHTML = ''; document.documentElement.style.overflow = '';
+    document.title = 'كتاب تحضير غداء العمل';
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
+  }
+  function toast(msg) { var t = $('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(function () { t.hidden = true; }, 2200); }
+  function toggleFav(id) {
+    if (S.favs[id]) delete S.favs[id]; else S.favs[id] = 1; persist();
+    Array.prototype.forEach.call(document.querySelectorAll('[data-fav="' + id + '"]'), function (b) { b.setAttribute('aria-pressed', S.favs[id] ? 'true' : 'false'); var sp = b.querySelector('span'); if (sp) sp.textContent = S.favs[id] ? 'محفوظة' : 'احفظ الوصفة'; });
+    if (S.fav) renderGrid();
+  }
+
+  // ---------- routing: #recipes, #tried, #sauces, #guide; #<recipe-id> and #sauce-<id> open over the current page
+  var VIEWS = { recipes: 'view-recipes', tried: 'view-tried', sauces: 'view-sauces', guide: 'view-guide' };
+  var booted = false;
+  function showView(v) {
+    var changed = S.view !== v; S.view = v;
+    Object.keys(VIEWS).forEach(function (k) { $(VIEWS[k]).hidden = k !== v; });
+    Object.keys(VIEWS).forEach(function (k) { var a = $('nav-' + k); if (k === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+    return changed;
+  }
+  function route() {
+    var h = (location.hash || '').replace(/^#/, '');
+    if (byId[h]) { if (!booted) showView('recipes'); booted = true; openRecipe(h); return; }
+    if (h.indexOf('sauce-') === 0 && bySauce[h.slice(6)]) { if (!booted) showView('sauces'); booted = true; openSauce(h.slice(6)); return; }
+    closeSheet();
+    if (showView(VIEWS[h] ? h : 'recipes') && booted) window.scrollTo(0, 0);
+    booted = true;
+  }
+  function back() { location.hash = '#' + S.view; }
+
+  // ---------- events
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-cat],[data-chip],[data-level],[data-fav],[data-n],[data-scat],[data-star],[data-unrate],[data-tsort],#clear,#s-close,#s-copy');
+    if (!t) { if (e.target === $('sheet')) back(); return; }
+    if (t.dataset.cat) { S.cat = t.dataset.cat; sync(); renderGrid(); }
+    else if (t.dataset.chip) { S[t.dataset.chip] = !S[t.dataset.chip]; sync(); renderGrid(); }
+    else if (t.dataset.level) { var l = t.dataset.level; if (S.levels[l]) delete S.levels[l]; else S.levels[l] = 1; sync(); renderGrid(); }
+    else if (t.dataset.fav) { e.preventDefault(); toggleFav(t.dataset.fav); }
+    else if (t.dataset.n) { S.meals = +t.dataset.n; persist(); renderScaled(byId[openId]); }
+    else if (t.dataset.scat) { S.scat = t.dataset.scat; renderSauceGrid(); }
+    else if (t.dataset.star) { var k = openKey(); if (!k) return; var was = !!rated(k); saveRating(k, { s: +t.dataset.star }); paintRatings(); toast(was ? 'حُفظ تقييمك' : isSauceKey(k) ? 'أُضيف إلى «جرّبتها»' : 'أُضيفت إلى «جرّبتها»'); }
+    else if (t.dataset.unrate) { var uk = t.dataset.unrate; if (!isKey(uk)) return; saveRating(uk, { s: 0 }); paintRatings(); toast(isSauceKey(uk) ? 'أُزيل من «جرّبتها»' : 'أُزيلت من «جرّبتها»'); }
+    else if (t.dataset.tsort) { S.tsort = t.dataset.tsort; renderTried(); }
+    else if (t.id === 'clear') { S.cat = 'all'; S.foodi = S.freeze = S.cold = S.quick = S.fav = S.untried = false; S.levels = {}; S.q = ''; $('q').value = ''; sync(); renderGrid(); }
+    else if (t.id === 's-close') { back(); }
+    else if (t.id === 's-copy') {
+      var txt = shoppingList(byId[openId], S.meals);
+      try { navigator.clipboard.writeText(txt).then(function () { toast('نُسخت قائمة التسوّق'); }, function () { toast('النسخ غير متاح هنا. حدّد القائمة وانسخها بنفسك.'); }); } catch (err) { toast('النسخ غير متاح هنا. حدّد القائمة وانسخها بنفسك.'); }
+    }
+  });
+  document.addEventListener('input', function (e) { if (e.target && e.target.id === 's-note') { clearTimeout(noteT); noteT = setTimeout(flushNote, 700); } });
+  document.addEventListener('focusout', function (e) { if (e.target && e.target.id === 's-note') flushNote(); });
+  document.addEventListener('visibilitychange', function () { if (document.hidden) flushNote(); });
+  window.addEventListener('pagehide', flushNote);
+  $('q').addEventListener('input', function () { S.q = this.value.trim(); S.qw = words(S.q); renderGrid(); });
+  $('sort').addEventListener('change', function () { S.sort = this.value; renderGrid(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && openId) back(); });
+  window.addEventListener('hashchange', route);
+
+  Array.prototype.forEach.call(document.querySelectorAll('img[data-pic]'), function (im) { if (PICS[im.dataset.pic]) im.src = PICS[im.dataset.pic]; });
+  renderFacts(); renderControls(); renderGrid(); renderSauces(); renderTried(); route(); rtInit();
+})();
+</script>
+<script>
+// installed app: keep the book on the phone; in the app itself also fetch every picture once
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+    var app = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+    if (app) navigator.serviceWorker.ready.then(function (reg) {
+      setTimeout(function () { if (reg.active) reg.active.postMessage('warm'); }, 3000);
+    });
+  });
+}
+</script>
+</body>
+</html>

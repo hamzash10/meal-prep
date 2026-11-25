@@ -76,5 +76,22 @@ window.PREP_CREDITS = {
  "crispy-chilli-beef": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
  "turkish-pasta-beef": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
  "philly-cheesesteak-pita": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
- "thai-basil-turkey": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)"
+ "thai-basil-turkey": "رسمة مولّدة بالذكاء الاصطناعي (Gemini)",
+ "philadelphia-roll": "صورة مؤقتة، والرسمة قادمة",
+ "teriyaki-salmon-roll": "صورة مؤقتة، والرسمة قادمة",
+ "salmon-egg-futomaki": "صورة مؤقتة، والرسمة قادمة",
+ "salmon-onigiri": "صورة مؤقتة، والرسمة قادمة",
+ "smoked-salmon-temari": "صورة مؤقتة، والرسمة قادمة",
+ "salmon-sushi-pizza": "صورة مؤقتة، والرسمة قادمة",
+ "salmon-bites": "صورة مؤقتة، والرسمة قادمة",
+ "spicy-tuna-roll": "صورة مؤقتة، والرسمة قادمة",
+ "tuna-sushi-cups": "صورة مؤقتة، والرسمة قادمة",
+ "crispy-rice-spicy-tuna": "صورة مؤقتة، والرسمة قادمة",
+ "tuna-mayo-kimbap": "صورة مؤقتة، والرسمة قادمة",
+ "crispy-chicken-roll": "صورة مؤقتة، والرسمة قادمة",
+ "korean-chicken": "صورة مؤقتة، والرسمة قادمة",
+ "chicken-quesadilla": "صورة مؤقتة، والرسمة قادمة",
+ "street-corn-chicken-bowl": "صورة مؤقتة، والرسمة قادمة",
+ "beef-birria-tacos": "صورة مؤقتة، والرسمة قادمة",
+ "cheeseburger-pasta": "صورة مؤقتة، والرسمة قادمة"
 };

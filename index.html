@@ -2,20 +2,19 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Meal Prep</title>
 <meta name="description" content="وصفات غداء للعمل غنية بالبروتين: اطبخ مرة واحدة وتغدَّ طوال الأسبوع.">
 <meta name="robots" content="noindex">
 <meta name="format-detection" content="telephone=no">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#F2F1EC" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#101317" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#26272A">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Meal Prep">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
@@ -395,56 +394,310 @@ th,td{text-align:right}
 .tempty .tbtns{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .trow .tkind{display:inline-block;vertical-align:middle;margin-inline-start:4px;font:600 11.5px/1 var(--font-body);color:var(--ink-2);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 8px}
 .tip .more{display:block;margin-top:6px}
+
+/* ---------- Meal Prep as a chalkboard app (his design system) ----------
+   A used slate board; the screen framed by a hand-drawn filigree in the top corners and double chalk lines down the
+   sides; ornaments lifted from his design boards (scroll rules, leaf curls, S-scrolls, sprouts); everything picked is
+   coloured in with a golden chalk marker with white writing on top, the title with a cyan one; labels on dusty blue
+   smudges; boxes and cards outlined with uneven double strokes. The pieces live in chalk/. */
+html:root:not(#chalk){
+  --paper:#292A2C; --card:#2E2F31; --soft:#333436; --line:rgba(237,234,226,.17);
+  --ink:#EDEAE2; --ink-2:#AEABA3;
+  --accent:#DBA92C; --accent-ink:#FFFFFF; --gold:#E3B84A; --tape:#8EC0EC; --tape-ink:#FFFFFF;
+  --l1:#7ED3A1; --l2:#C2DD79; --l3:#F4D36B; --l4:#F3A35E; --l5:#EF7E7A;
+  --chalk:rgba(237,234,226,.62); --chalk-2:rgba(237,234,226,.32);
+  --board:#292A2C; --bar:rgba(37,38,40,.96); --nav-h:92px;
+  --grain:url(data:image/png;base64,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); --dust:0 0 1.5px rgba(237,234,226,.4);
+  --on-gold:0 0 3px rgba(72,46,0,.95),0 1px 1px rgba(0,0,0,.6);   /* white writing stays readable on the gold marker */
+  --corner:112px;                                                   /* the screen's corner filigree, its width */
+  color-scheme:dark;
+}
+html{background:var(--board)}
+body{background:transparent;-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none;
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 18px)}
+body::before,.sheet::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--board) url(chalk/board.webp) center/cover no-repeat}
+/* the double chalk lines down both sides of the screen, the same lines the corner filigree is drawn with */
+body::after,.sheet::after{content:"";position:fixed;inset:0;z-index:45;pointer-events:none;
+  background:url(chalk/side-l.svg) left 2px top 0/7.32px 100% no-repeat,url(chalk/side-r.svg) right 2px top 0/7.32px 100% no-repeat}
+::selection{background:rgba(219,169,44,.4)}
+button,a,label{-webkit-tap-highlight-color:transparent}
+.ic{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
+/* chalk lettering and chalk-drawn controls: grainy, with a little dust round the strokes */
+.mark,.hero h1,.guide h1,.shero h1,.gt,.g h2,.s-head h2,.card h3,.card .cat,.sec h3,.scaler h3,.btips h2,.tgroup h2,.nutri h3,
+.facts b,.stat b,.foodi .set,.steps4 b,.rules b,.trow b,.pn a b,.lbl,.nav a,.tab,.chip,.level,.meal,.btn,.heart,.field > svg,
+.stars,.close svg,.sfav svg,.sbar-t,.week div b,.count{
+  -webkit-mask-image:var(--grain);mask-image:var(--grain);-webkit-mask-size:170px;mask-size:170px}
+.mark,.hero h1,.guide h1,.shero h1,.gt,.g h2,.s-head h2,.card h3,.sec h3,.scaler h3,.btips h2,.tgroup h2,.nutri h3,
+.facts b,.stat b,.foodi .set,.steps4 b,.rules b,.trow b,.pn a b{text-shadow:var(--dust)}
+/* anything coloured in with a marker keeps its own texture and crisp white writing */
+.tab[aria-pressed="true"],.chip[aria-pressed="true"],.meal[aria-pressed="true"],.btn.solid,.nav a[aria-current="page"],.mark,.tape{-webkit-mask-image:none;mask-image:none}
+
+/* ---------- header: the filigree in both top corners, the line between them, and the title on cyan chalk marker */
+.top{position:static;justify-content:center;flex-wrap:nowrap;min-height:96px;padding:calc(30px + env(safe-area-inset-top)) 18px 4px}
+.top::before{content:"";position:absolute;left:0;right:0;top:env(safe-area-inset-top);height:110px;pointer-events:none;z-index:0;
+  background:url(chalk/vp-corner.webp) left 2px top 4px/var(--corner) auto no-repeat,url(chalk/vp-corner-r.webp) right 2px top 4px/var(--corner) auto no-repeat,
+    url(chalk/top-l.svg) center top 4px/calc(100% - 2 * var(--corner) - 2px) 3.9px no-repeat}
+.mark{position:relative;z-index:1;direction:ltr;gap:2px;line-height:1;color:#fff;text-decoration:none}
+.mark::before,.mark::after{content:"";flex:none;width:74px;height:22px;background:url(chalk/hdr-l.webp) center/contain no-repeat;transform:none}
+.mark::after{background-image:url(chalk/hdr-r.webp)}
+.mark .tape{font:700 38px/1.05 "Caveat","Lalezar",cursive;letter-spacing:.01em;text-transform:none;color:#fff;margin:0;padding:7px 21px 9px;
+  background:url(chalk/mk-title.svg) center/100% 100% no-repeat;transform:rotate(-2deg);text-shadow:0 1px 2px rgba(0,40,60,.55)}
+
+/* kickers and little labels: white writing on a dusty blue chalk smudge */
+.tape{background:url(chalk/smudge-b.svg) center/100% 100% no-repeat;color:#fff;clip-path:none;border-radius:0;
+  transform:rotate(-1.5deg);text-shadow:0 1px 1px rgba(16,38,66,.55);padding:4px 14px 3px}
+
+/* ---------- the tab bar: anchor scrolls along its top, an S-scroll at each outer corner, sketchy dashes between the
+   tabs; the others hollow and faint, the page you're on coloured in gold with white on top */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:48;width:auto;transform:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;
+  background:var(--bar);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:0;border-radius:24px 24px 0 0;
+  padding:17px 34px calc(15px + env(safe-area-inset-bottom))}
+.nav::after{content:none}
+.nav::before{content:"";position:absolute;left:4px;right:4px;top:4px;bottom:calc(4px + env(safe-area-inset-bottom));pointer-events:none;
+  border-style:solid;border-color:transparent;border-width:36px 40px;border-image:url(chalk/o-E4.webp) 112 120 / 36px 40px stretch}
+.nav a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:8px 2px 9px;border-radius:0;
+  color:rgba(237,234,226,.5);font-size:12.5px;font-weight:600;line-height:1.3;text-decoration:none;user-select:none;-webkit-user-select:none;text-align:center;background:none}
+.nav a + a{background:url(chalk/o-D9.webp) right -6px center/auto 44px no-repeat}
+.nav a svg{width:27px;height:27px;stroke-width:1.7;transition:transform .18s ease}
+.nav a[aria-current="page"]{color:#fff;font-weight:700;text-shadow:var(--on-gold);background:url(chalk/mk-tab.svg) center/100% 100% no-repeat}
+.nav a + a[aria-current="page"]{background:url(chalk/o-D9.webp) right -6px center/auto 44px no-repeat,url(chalk/mk-tab.svg) center/100% 100% no-repeat}
+.nav a[aria-current="page"] svg{stroke-width:2.2;filter:drop-shadow(0 0 1.5px rgba(72,46,0,.95))}
+.nav a:active svg{transform:scale(.9)}
+@media (min-width:700px){
+  .nav{left:50%;right:auto;transform:translateX(-50%);width:min(580px,calc(100% - 40px));bottom:14px;border-radius:18px;padding:17px 38px 15px;background:var(--bar)}
+  .nav::before{bottom:4px}
+}
+
+/* ---------- search, filters and categories: right on the board; a backing of its own only once it sticks to the top */
+.tabsbar{top:0;z-index:20;border:0;margin:0 -16px;padding:6px 16px 10px;background:transparent;box-shadow:none;clip-path:none}
+.tabsbar.stuck{background:url(chalk/hline.svg) center bottom/100% 9px no-repeat,var(--bar);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  box-shadow:0 0 0 100vmax var(--bar);clip-path:inset(0 -100vmax)}
+.tabsbar .tabs{margin:0 -16px;padding:4px 16px}
+.sbox{display:flex;gap:10px;align-items:center;margin-bottom:11px}
+.field{flex:1;display:flex;align-items:center;gap:9px;min-width:0;height:50px;padding:0 15px;border:1.5px solid transparent;
+  border-image:url(chalk/box2.svg) 20 / 20px / 3px stretch;border-radius:15px;background:rgba(18,19,21,.3);color:var(--ink);cursor:text}
+.field > svg{width:22px;height:22px;flex:none}
+.field input{flex:1;min-width:0;height:100%;border:0;background:transparent;color:var(--ink);font-size:16px;outline:none;padding:0}
+.field input::placeholder{color:var(--ink-2)}
+.field input::-webkit-search-cancel-button{filter:invert(1) opacity(.6)}
+.field:focus-within{border-image-source:url(chalk/box2-y.svg)}
+.fbtn{position:relative;flex:none;width:50px;height:50px;border:1.5px solid transparent;border-image:url(chalk/box2.svg) 20 / 20px / 3px stretch;
+  border-radius:15px;background:rgba(18,19,21,.3);color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0}
+.fbtn svg{width:24px;height:24px;-webkit-mask-image:var(--grain);mask-image:var(--grain);-webkit-mask-size:170px;mask-size:170px}
+.fbtn[aria-expanded="true"]{border-image-source:url(chalk/box2-y.svg);color:var(--gold)}
+#fcount{position:absolute;top:-9px;left:-9px;min-width:24px;height:24px;padding:0 6px;border-radius:12px;background:url(chalk/mk-chip.svg) center/100% 100% no-repeat;
+  color:#fff;text-shadow:var(--on-gold);font:700 13px/24px var(--font-body);font-style:normal;text-align:center}
+/* categories and filter chips: an uneven double-line pill; the picked one coloured in gold with white writing */
+.tab{border:1.5px solid transparent;border-image:url(chalk/pill.svg) 22 / 20px / 1px stretch;border-radius:0;background:transparent;
+  color:var(--ink);padding:8px 17px;font-weight:600;font-size:15px}
+.tab small{opacity:1;font-size:15px;font-weight:600;margin-right:5px}
+.tab[aria-pressed="true"]{border-image:none;border-color:transparent;background:url(chalk/mk-chip.svg) center/100% 100% no-repeat;color:#fff;font-weight:700;text-shadow:var(--on-gold)}
+.controls{margin-top:12px;padding:16px 16px 14px;gap:14px;border:1.5px solid transparent;border-image:url(chalk/o-E1.webp) 112 / 27px / 5px stretch;
+  border-radius:20px;background:rgba(30,31,33,.6);max-height:62vh;overflow-y:auto;overscroll-behavior:contain}
+.controls[hidden]{display:none}
+@media (prefers-reduced-motion:no-preference){.controls:not([hidden]){animation:drop .2s ease-out}}
+@keyframes drop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.lbl{color:var(--gold);margin-bottom:8px}
+.chip{border:1.5px solid transparent;border-image:url(chalk/pill.svg) 22 / 19px / 1px stretch;border-radius:0;background:transparent;padding:8px 13px;--cut:transparent}
+.chip[aria-pressed="true"]{border-image:none;border-color:transparent;background:url(chalk/mk-chip.svg) center/100% 100% no-repeat;color:#fff;text-shadow:var(--on-gold);--cut:transparent}
+.level{border:1.5px solid transparent;border-image:url(chalk/box2.svg) 20 / 20px / 2px stretch;border-radius:13px;background:transparent;box-shadow:none}
+.level[aria-pressed="true"]{border-image-source:url(chalk/box2-y.svg);color:var(--gold);box-shadow:none}
+.find{display:grid;gap:0}
+.find select{width:100%;background:rgba(18,19,21,.3);border:1.5px solid transparent;border-image:url(chalk/box2.svg) 20 / 20px / 3px stretch;
+  border-radius:14px;padding:12px 13px;color:var(--ink)}
+.count{padding:12px 4px 2px;font-size:14px;color:var(--ink-2)}
+.count button{color:var(--gold)}
+
+/* ---------- cards: an uneven double-stroke frame, leaf curls in the bottom inside corners, a sprout where there is room */
+.grid{gap:24px 18px;padding:16px 4px 30px}
+.card{background:transparent;border:0;border-radius:0;overflow:visible;padding:10px 8px 0}
+.card::before{content:"";position:absolute;inset:-5px;z-index:2;pointer-events:none;border:27px solid transparent;
+  border-image:url(chalk/o-E1.webp) 112 / 27px stretch;opacity:.95}
+.card::after{content:none}
+.card .hit{border-radius:18px}
+.card .pic{background:transparent;border-radius:12px}
+.card .pic img{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%),linear-gradient(180deg,transparent 0,#000 3%,#000 94%,transparent 100%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%),linear-gradient(180deg,transparent 0,#000 3%,#000 94%,transparent 100%);
+  mask-composite:intersect}
+.card .pic::after{content:"";position:absolute;left:50%;bottom:-8px;width:132px;height:16px;transform:translateX(-50%);
+  background:url(chalk/crumbs.svg) center/contain no-repeat;pointer-events:none}
+.card .body{gap:3px;padding:10px 3px 22px 16px;position:relative;overflow:hidden;flex:1 0 auto;align-content:start}   /* fills the card, so the flourishes reach its bottom */
+.cat{color:var(--tape);font-size:13px;font-weight:700}
+.card h3{font-size:19px;line-height:1.5;color:var(--ink)}
+.card .line,.card .nums{color:var(--ink-2)}
+.card .line b,.card .nums b{color:var(--ink)}
+.heart{top:16px;left:16px;width:38px;height:38px;background:rgba(33,34,36,.7);border:1.5px solid rgba(237,234,226,.82);box-shadow:none;color:var(--ink)}
+.badge{background:rgba(33,34,36,.86);color:var(--ink);--cut:transparent;border-radius:6px;box-shadow:inset 0 0 0 1.4px rgba(237,234,226,.72)}
+.badge.part,.badge.plain{background:rgba(33,34,36,.86);color:var(--ink);--cut:transparent;box-shadow:inset 0 0 0 1.4px rgba(237,234,226,.72)}
+.rbadge{background:rgba(33,34,36,.86);color:var(--ink);box-shadow:inset 0 0 0 1.4px rgba(237,234,226,.72)}
+.empty{border:1.5px solid transparent;border-image:url(chalk/o-E1.webp) 112 / 27px / 5px stretch;border-radius:20px}
+@media (hover:hover){.card:hover .pic img{transform:scale(1.03)}}
+@media (min-width:700px){.grid{gap:28px 22px}}
+
+/* ---------- page headings */
+.hero{padding:4px 0 18px;gap:18px}
+.hero h1{font-size:clamp(38px,11vw,72px);margin:12px 0 10px}
+.trio img{box-shadow:0 14px 28px rgba(0,0,0,.5)}
+.shero{padding-bottom:12px}
+.shero .trio{display:none}
+.shero h1{font-size:clamp(32px,9vw,54px);margin:10px 0 8px}
+.shero p{font-size:15px}
+.guide{gap:28px;padding-top:4px}
+.guide h1{font-size:clamp(32px,9vw,54px);margin:12px 0 8px}
+.gintro{display:grid;gap:4px}
+.gintro .tape{justify-self:start}
+.gt{font:400 clamp(30px,8.4vw,48px)/1.35 var(--font-display);margin:10px 0 4px}
+.guide .lead,.hero p{color:var(--ink-2)}
+
+/* dividers between sections: a symmetrical scroll rule, volutes at the ends and a curl in the middle */
+.g,.btips,.scaler,.sec .hd,.facts,.gfoot{border-top:0;background:url(chalk/o-B1.webp) center top/min(100%,240px) auto no-repeat;padding-top:48px}
+.tgroup h2{border-top:0;background:url(chalk/o-B1.webp) center top/min(100%,240px) auto no-repeat;padding-top:46px}
+.g h2,.btips h2{display:flex;align-items:center;gap:10px}
+.g h2::after,.btips h2::after{content:"";flex:none;width:96px;height:24px;opacity:.95;background:url(chalk/o-B2.webp) center/contain no-repeat}
+.facts li,.ings li,.steps li{border-bottom:1px dashed rgba(237,234,226,.2)}
+
+/* boxes: uneven double strokes, sketched past the corners */
+.stat,.tip,.pair,.schip,.pn a,.trow,.steps4 li,.rules li,.key > div,.dials div,.checks,.tblwrap,.week div,.meal,.rnote textarea{
+  border:1.5px solid transparent;border-image:url(chalk/box2.svg) 20 / 20px / 2px stretch;border-radius:13px;background:transparent}
+.week .fz{background:url(chalk/smudge-b.svg) center/100% 100% no-repeat;color:#FFFFFF;border-image:none}
+.meal[aria-pressed="true"]{border-image:none;background:url(chalk/mk-tab.svg) center/100% 100% no-repeat;color:#fff;text-shadow:var(--on-gold)}
+.foodi{border:1.5px solid transparent;border-image:url(chalk/o-E1.webp) 112 / 27px / 5px stretch;border-radius:20px;background:transparent}
+.foodi .hd .pill{background:url(chalk/mk-chip.svg) center/100% 100% no-repeat;color:#fff;text-shadow:var(--on-gold)}
+.foodi.none{border-image-source:url(chalk/box2.svg);border-image-slice:20;border-image-width:20px;border-image-outset:2px}
+.nutri{border:1.5px solid transparent;border-image:url(chalk/o-E1.webp) 112 / 27px / 5px stretch;background:transparent}
+.nutri h3,.nutri .per,.nutri .cal{border-bottom-color:rgba(237,234,226,.55)}
+.bar .f{background:var(--chalk-2)}
+.btn{border:1.5px solid transparent;border-image:url(chalk/pill.svg) 22 / 21px / 1px stretch;border-radius:0;background:transparent;color:var(--ink);padding:10px 17px}
+.btn.solid{border-image:none;border-color:transparent;background:url(chalk/mk-wide.svg) center/100% 100% no-repeat;color:#fff;text-shadow:var(--on-gold)}
+.ings .chk{color:var(--tape);border-bottom-color:var(--tape)}
+.trow .tnote,.trow .tkind{background:var(--soft)}
+.gfoot{padding-bottom:8px;color:var(--ink-2);font-size:13px}
+.gfoot p{margin:0 0 6px}
+
+/* ---------- a recipe or a sauce: its own page that slides in, on the same board, with a bar on top */
+.sheet{background:transparent;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.sheet::before{z-index:0}
+.sheet .in{z-index:1;background:transparent;min-height:100%;padding-bottom:calc(30px + env(safe-area-inset-bottom))}
+@media (prefers-reduced-motion:no-preference){.sheet:not([hidden]) .in{animation:pagein .26s cubic-bezier(.2,.8,.2,1)}}
+@keyframes pagein{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+.sbar{position:sticky;top:0;z-index:6;display:flex;align-items:center;gap:6px;padding:calc(8px + env(safe-area-inset-top)) 16px 9px;
+  background:url(chalk/hline.svg) center bottom/100% 9px no-repeat,var(--bar);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.close{position:static;float:none;margin:0;flex:none;width:44px;height:44px;border-radius:14px;border:0;background:transparent;color:var(--ink);box-shadow:none;display:grid;place-items:center;font-size:0}
+.close svg{width:27px;height:27px}
+.close:active,.sfav:active{background:rgba(237,234,226,.08)}
+.sbar-t{flex:1;min-width:0;font:400 19px/1.35 var(--font-display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;transform:translateY(4px);transition:opacity .2s,transform .2s}
+.sheet.scrolled .sbar-t{opacity:1;transform:none}
+.sfav{flex:none;width:44px;height:44px;border-radius:14px;border:0;background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;margin-inline-start:auto}
+.sfav svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.9}
+.sfav[aria-pressed="true"] svg{fill:var(--l5);stroke:var(--l5)}
+.s-pic{background:transparent}
+.s-pic img{border:0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%),linear-gradient(180deg,#000 0,#000 82%,transparent 100%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%),linear-gradient(180deg,#000 0,#000 82%,transparent 100%);
+  mask-composite:intersect}
+.s-head h2{font-size:clamp(32px,8.6vw,52px);background:url(chalk/underline.svg) right bottom/130px 13px no-repeat;padding-bottom:14px}
+@media (min-width:700px){.s-head h2{font-size:44px}}
+
+.toast{bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 18px);background:url(chalk/mk-wide.svg) center/100% 100% no-repeat;color:#fff;text-shadow:var(--on-gold);
+  box-shadow:none;border-radius:0;padding:11px 22px}
+@media (min-width:700px){.toast{bottom:104px}}
+
+/* ---------- more of his ornaments, each where the boards put it */
+/* the bars that stick to the top end in a dash-and-dot line with tiny scrolls */
+.tabsbar.stuck,.sbar{background:url(chalk/rule-dots.webp) center bottom -9px/calc(100% - 26px) auto no-repeat,var(--bar)}
+.tabsbar.stuck{padding-bottom:14px}
+.sbar{padding-bottom:13px}
+/* a recipe's or a sauce's links to the next ones: the card divider bracket above them */
+.pn{border-top:0;padding-top:58px;background:url(chalk/o-B5.webp) center top/min(100%,250px) auto no-repeat}
+/* the end of a recipe page: an inner margin swirl */
+.sheet .in::after{content:"";display:block;height:60px;width:min(60%,220px);margin:22px auto 0;background:url(chalk/o-B7.webp) center/contain no-repeat;opacity:.9}
+/* the guide's footer: the wave & scroll divider */
+.gfoot{background-image:url(chalk/o-B4.webp)}
+/* nothing tried yet: a botanical leafy vine under the message */
+.tempty::after{content:"";display:block;width:min(80%,260px);height:56px;margin-top:6px;background:url(chalk/o-B6.webp) center/contain no-repeat;opacity:.95}
+
+/* ---------- his seven card-grid flourishes, drawn by Gemini in white chalk with hints of colour (pieces C, D and B
+   from his sheets). The text is right-aligned, so they keep to the empty LEFT side of each card (physical left, on
+   purpose): the side strip the text keeps clear, the band under the picture beside the category, and the band under
+   the numbers. In a 2-column RTL grid, card 4n+1 is a block's top right, 4n+2 its top left, 4n+3 its bottom right
+   and 4n+4 its bottom left. */
+.card .body{overflow:visible;padding-bottom:26px}
+.grid > .card .body::after{content:"";position:absolute;pointer-events:none;opacity:.85;background:center/contain no-repeat}
+/* 1. top-left card: an inverted-L scroll with leaves under the picture and down the left edge (C1) */
+.grid > .card:nth-child(4n+2) .body::after{top:2px;left:-5px;width:62px;height:63px;background-image:url(chalk/o-C1.webp)}
+/* 2. top-right card: an L-shaped leafy vine down the left edge and along the bottom, under the numbers (C2, flipped) */
+.grid > .card:nth-child(4n+1) .body::after{bottom:3px;left:-5px;width:66px;height:57px;background-image:url(chalk/o-C2v.webp)}
+/* 3. bottom-left card: a corner scroll in the bottom-left corner, rising up the left edge (C3) */
+.grid > .card:nth-child(4n+4) .body::after{bottom:5px;left:-4px;width:58px;height:49px;background-image:url(chalk/o-C3.webp)}
+/* 4. bottom-right card: kept clean */
+.grid > .card:nth-child(4n+3) .body::after{content:none}
+
+/* 5. the crown: his curly-bracket rule (B8) over the top-left card, across from the count ("جميع الوصفات الـ94") */
+#grid{padding-top:8px}
+#grid > .card:nth-child(2)::after{content:"";position:absolute;z-index:3;pointer-events:none;opacity:.9;top:-26px;left:50%;width:min(150px,92%);height:22px;
+  transform:translateX(-50%);background:url(chalk/o-B8.webp) center/contain no-repeat}
+#grid.filtered > .card:nth-child(2)::after{content:none}      /* the clear-filters button takes that spot */
+
+@media (max-width:699px){
+  /* 6. where the four cards of a block meet: his hand-drawn four-point star (D1), drawn by the block's top-right card
+     only when a row follows */
+  .grid > .card:nth-child(4n+1):not(:nth-last-child(-n+2))::after{content:"";position:absolute;z-index:3;pointer-events:none;opacity:.9;
+    left:-26px;bottom:-29px;width:34px;height:34px;background:url(chalk/o-D1.webp) center/contain no-repeat}
+  /* 7. in the outer margins, at the same gap: his little bridge with a loop and a leaf (D5), mirrored on the right */
+  .grid > .card:nth-child(4n+4)::after,.grid > .card:nth-child(4n+3)::after{content:"";position:absolute;z-index:3;pointer-events:none;opacity:.9;
+    top:-34px;width:20px;height:44px;background:url(chalk/o-D5.webp) center/contain no-repeat}
+  .grid > .card:nth-child(4n+4)::after{left:-18px}
+  .grid > .card:nth-child(4n+3)::after{right:-18px;transform:scaleX(-1)}
+}
+/* wider screens: the crown goes over whichever card is top left */
+@media (min-width:700px){
+  #grid > .card:nth-child(2)::after{content:none}
+  #grid:not(.filtered) > .card:nth-child(3)::after{content:"";position:absolute;z-index:3;pointer-events:none;opacity:.9;top:-26px;left:50%;width:min(150px,92%);height:22px;
+    transform:translateX(-50%);background:url(chalk/o-B8.webp) center/contain no-repeat}
+}
+@media (min-width:1020px){
+  #grid > .card:nth-child(3)::after{content:none}
+  #grid:not(.filtered) > .card:nth-child(4)::after{content:"";position:absolute;z-index:3;pointer-events:none;opacity:.9;top:-26px;left:50%;width:min(150px,92%);height:22px;
+    transform:translateX(-50%);background:url(chalk/o-B8.webp) center/contain no-repeat}
+}
 </style>
 </head>
 <body>
 <header class="wrap top">
-  <a class="mark" href="#recipes"><span class="tape">تحضير</span>الغداء</a>
-  <nav class="nav" aria-label="الأقسام">
-    <a href="#recipes" id="nav-recipes" aria-current="page">الوصفات</a>
-    <a href="#tried" id="nav-tried">جرّبتها</a>
-    <a href="#sauces" id="nav-sauces">الصوصات</a>
-    <a href="#guide" id="nav-guide"><span class="lg">دليل التحضير</span><span class="sm">الدليل</span></a>
-  </nav>
+  <a class="mark" href="#recipes"><span class="tape" lang="en">Meal Prep</span></a>
 </header>
 
 <main id="view-recipes" class="wrap">
-  <section class="hero">
-    <div>
-      <span class="tape" id="hero-tape">52 وجبة غداء للعمل</span>
-      <h1>اطبخ مرة واحدة.<br>وتغدَّ طوال الأسبوع.</h1>
-      <p>وجبات غداء غنية بالبروتين، بنحو 500 سعرة للوجبة، تصمد في الثلاجة وفي ميكروويف المكتب. اختر وصفة، وحدّد عدد الوجبات، واطبخ.</p>
-    </div>
-    <div class="trio" aria-hidden="true">
-      <img src="img/salmon-rice-bowl.webp" data-pic="salmon-rice-bowl" alt="" width="960" height="720">
-      <img src="img/kofta-potato-tomato-bake.webp" data-pic="kofta-potato-tomato-bake" alt="" width="960" height="720">
-      <img src="img/lemon-herb-chicken-quinoa.webp" data-pic="lemon-herb-chicken-quinoa" alt="" width="960" height="720">
-    </div>
-    <ul class="facts" id="facts"></ul>
-  </section>
 
-  <div class="tabsbar"><div class="tabs" id="tabs" role="group" aria-label="المكوّن الرئيسي"></div></div>
-  <section class="controls" aria-label="الفلاتر">
-    <div>
-      <p class="lbl">ضيّق الاختيار</p>
-      <div class="chips" id="chips"></div>
+  <div class="tabsbar" id="rbar">
+    <div class="sbox">
+      <label class="field"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg><input id="q" type="search" placeholder="ابحث عن طبق أو مكوّن" aria-label="ابحث في الوصفات" autocomplete="off" enterkeyhint="search"></label>
+      <button type="button" class="fbtn" id="fbtn" aria-expanded="false" aria-controls="filters" aria-label="الفلاتر والترتيب"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 6a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M4 6l8 0"/><path d="M16 6l4 0"/><path d="M6 12a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M4 12l2 0"/><path d="M10 12l10 0"/><path d="M15 18a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M4 18l11 0"/><path d="M19 18l1 0"/></svg><i id="fcount" hidden></i></button>
     </div>
-    <div>
-      <p class="lbl">الصعوبة، من 5</p>
-      <div class="levels" id="levels"></div>
-    </div>
-    <div class="find">
-      <input id="q" type="search" placeholder="ابحث عن طبق أو مكوّن" aria-label="ابحث في الوصفات" autocomplete="off">
-      <select id="sort" aria-label="ترتيب الوصفات">
-        <option value="book">ترتيب الكتاب</option>
-        <option value="time">الأسرع</option>
-        <option value="level">الأسهل</option>
-        <option value="kcal">الأقل سعرات</option>
-        <option value="protein">الأكثر بروتينًا</option>
-      </select>
-    </div>
-    <div class="count"><span id="count"></span><button type="button" id="clear" hidden>امسح الفلاتر</button></div>
-  </section>
+    <div class="tabs" id="tabs" role="group" aria-label="المكوّن الرئيسي"></div>
+    <section class="controls" id="filters" aria-label="الفلاتر والترتيب" hidden>
+      <div>
+        <p class="lbl">ضيّق الاختيار</p>
+        <div class="chips" id="chips"></div>
+      </div>
+      <div>
+        <p class="lbl">الصعوبة، من 5</p>
+        <div class="levels" id="levels"></div>
+      </div>
+      <div class="find">
+        <label class="lbl" for="sort">الترتيب</label>
+        <select id="sort" aria-label="ترتيب الوصفات">
+          <option value="book">ترتيب الكتاب</option>
+          <option value="time">الأسرع</option>
+          <option value="level">الأسهل</option>
+          <option value="kcal">الأقل سعرات</option>
+          <option value="protein">الأكثر بروتينًا</option>
+        </select>
+      </div>
+    </section>
+  </div>
+  <div class="count"><span id="count"></span><button type="button" id="clear" hidden>امسح الفلاتر</button></div>
   <section class="grid" id="grid" aria-live="polite"></section>
 </main>
 
@@ -493,10 +746,23 @@ th,td{text-align:right}
 </main>
 
 <main id="view-guide" class="wrap" hidden>
-  <div class="guide">
+  <section class="hero">
     <div>
+      <span class="tape" id="hero-tape">52 وجبة غداء للعمل</span>
+      <h1>اطبخ مرة واحدة.<br>وتغدَّ طوال الأسبوع.</h1>
+      <p>وجبات غداء غنية بالبروتين، بنحو 500 سعرة للوجبة، تصمد في الثلاجة وفي ميكروويف المكتب. اختر وصفة، وحدّد عدد الوجبات، واطبخ.</p>
+    </div>
+    <div class="trio" aria-hidden="true">
+      <img src="img/salmon-rice-bowl.webp" data-pic="salmon-rice-bowl" alt="" width="960" height="720">
+      <img src="img/kofta-potato-tomato-bake.webp" data-pic="kofta-potato-tomato-bake" alt="" width="960" height="720">
+      <img src="img/lemon-herb-chicken-quinoa.webp" data-pic="lemon-herb-chicken-quinoa" alt="" width="960" height="720">
+    </div>
+    <ul class="facts" id="facts"></ul>
+  </section>
+  <div class="guide">
+    <div class="gintro">
       <span class="tape">اقرأه مرة واحدة</span>
-      <h1>دليل التحضير</h1>
+      <h2 class="gt">دليل التحضير</h2>
       <p class="lead">كيف تحوّل جلسة طبخ واحدة إلى غداء أسبوع كامل، وتحفظه آمنًا، وتستفيد أقصى استفادة من جهاز Ninja Foodi.</p>
     </div>
 
@@ -627,13 +893,21 @@ th,td{text-align:right}
       </ul>
     </section>
   </div>
+  <footer class="gfoot">
+    <p id="pic-note">كل صور الكتاب، للوجبات والصوصات، رسومات مولّدة بالذكاء الاصطناعي (Gemini).</p>
+    <p>القيم الغذائية تقديرات لكل وجبة، محسوبة من أوزان المكوّنات النيئة وفق متوسطات وزارة الزراعة الأمريكية (USDA). البهارات غير محسوبة.</p>
+    <p>أرقام التخزين والحرارة تتبع إرشادات سلامة الغذاء الصادرة عن USDA. أوقات Ninja Foodi تتبع جداول الطبخ من Ninja لجهاز Foodi MAX Health Grill and Air Fryer.</p>
+  <p>الأيقونات من Tabler Icons (رخصة MIT).</p>
+  </footer>
 </main>
 
-<footer class="wrap">
-  <p id="pic-note">كل صور الكتاب، للوجبات والصوصات، رسومات مولّدة بالذكاء الاصطناعي (Gemini).</p>
-  <p>القيم الغذائية تقديرات لكل وجبة، محسوبة من أوزان المكوّنات النيئة وفق متوسطات وزارة الزراعة الأمريكية (USDA). البهارات غير محسوبة.</p>
-  <p>أرقام التخزين والحرارة تتبع إرشادات سلامة الغذاء الصادرة عن USDA. أوقات Ninja Foodi تتبع جداول الطبخ من Ninja لجهاز Foodi MAX Health Grill and Air Fryer.</p>
-</footer>
+
+<nav class="nav" aria-label="الأقسام">
+  <a href="#recipes" id="nav-recipes" aria-current="page"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M19 3v12h-5c-.023 -3.681 .184 -7.406 5 -12m0 12v6h-1v-3m-10 -14v17m-3 -17v3a3 3 0 1 0 6 0v-3"/></svg><span>الوصفات</span></a>
+  <a href="#sauces" id="nav-sauces"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M10 5h4v-2a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v2"/><path d="M14 3.5c0 1.626 .507 3.212 1.45 4.537l.05 .07a8.093 8.093 0 0 1 1.5 4.694v6.199a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-6.2c0 -1.682 .524 -3.322 1.5 -4.693l.05 -.07a7.823 7.823 0 0 0 1.45 -4.537"/><path d="M7 14.803a2.4 2.4 0 0 0 1 -.803a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 1 -.805"/></svg><span>الصوصات</span></a>
+  <a href="#tried" id="nav-tried"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873l-6.158 -3.245"/></svg><span>جرّبتها</span></a>
+  <a href="#guide" id="nav-guide"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6l0 13"/><path d="M12 6l0 13"/><path d="M21 6l0 13"/></svg><span>الدليل</span></a>
+</nav>
 
 <div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="s-title"><div class="in" id="sheet-in"></div></div>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -677,7 +951,8 @@ th,td{text-align:right}
   var ICON = {
     foodi: '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M3.5 12.5h17v4a2.5 2.5 0 0 1-2.5 2.5H6a2.5 2.5 0 0 1-2.5-2.5z" fill="currentColor"/><path d="M4.6 10.4C6 6.6 8.8 4.8 12 4.8s6 1.8 7.4 5.6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M10 2.9h4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M8 14.7v2.3M12 14.7v2.3M16 14.7v2.3" stroke="var(--cut, var(--card))" stroke-width="1.5" stroke-linecap="round"/></svg>',
     snow: '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>',
-    heart: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.6A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20z" stroke-linejoin="round"/></svg>'
+    heart: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.6A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.4C19 15.6 12 20 12 20z" stroke-linejoin="round"/></svg>',
+    back: '<svg class="ic" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></svg>'
   };
   function dial(level, size) {
     var cx = 24, cy = 25, r = 18, segs = '', i;
@@ -772,6 +1047,9 @@ th,td{text-align:right}
     $('grid').innerHTML = list.length ? list.map(card).join('') : '<div class="empty"><b>لا توجد وصفة تطابق هذه الفلاتر.</b><br>جرّب إزالة أحدها، أو امسحها كلها.</div>';
     $('count').textContent = list.length === R.length ? 'جميع الوصفات الـ' + R.length : list.length + ' من ' + R.length + ' وصفة';
     $('clear').hidden = !anyFilter();
+    $('grid').classList.toggle('filtered', anyFilter());
+    var nf = ['foodi', 'freeze', 'cold', 'quick', 'fav', 'untried'].filter(function (k) { return S[k]; }).length + Object.keys(S.levels).length + (S.sort !== 'book' ? 1 : 0);
+    $('fcount').textContent = nf; $('fcount').hidden = !nf;
   }
   function renderControls() {
     $('tabs').innerHTML = CATS.map(function (c) { var n = c[0] === 'all' ? R.length : R.filter(function (r) { return r.cat === c[0]; }).length; return '<button type="button" class="tab" data-cat="' + c[0] + '" aria-pressed="' + (S.cat === c[0]) + '">' + c[1] + '<small>' + n + '</small></button>'; }).join('');
@@ -1060,7 +1338,8 @@ th,td{text-align:right}
     var foodi = f.mode === 'none'
       ? '<div class="foodi none"><div class="hd">' + ICON.foodi + 'Ninja Foodi</div><p>' + (f.nocook ? 'لا طبخ في هذه الوصفة، فيبقى الـFoodi في الخزانة.' : 'ليست وصفة Foodi. تحتاج قدرًا أو مقلاة على الموقد.') + '</p></div>'
       : '<div class="foodi"><div class="hd">' + ICON.foodi + 'Ninja Foodi<span class="pill">' + (f.mode === 'full' ? 'الوصفة كاملة' : 'الجزء الرئيسي') + '</span></div><div class="set"><bdi>' + esc(f.fn) + '</bdi> · <bdi>' + esc(f.set) + '</bdi> · <bdi>' + esc(f.time) + '</bdi></div><p>' + esc(f.how) + '</p>' + (f.also ? '<p class="also">يلزمك أيضًا: ' + esc(f.also) + '.</p>' : '') + '</div>';
-    return '<button class="close" type="button" id="s-close" aria-label="أغلق الوصفة">×</button>' +
+    return '<div class="sbar"><button class="close" type="button" id="s-close" aria-label="رجوع إلى القائمة">' + ICON.back + '</button><b class="sbar-t">' + esc(r.name) + '</b>' +
+      '<button class="sfav" type="button" data-fav="' + r.id + '" aria-pressed="' + (S.favs[r.id] ? 'true' : 'false') + '" aria-label="احفظ الوصفة">' + ICON.heart + '</button></div>' +
       '<div class="s-top"><div class="s-pic"><img src="' + pic(r.id) + '" alt="صورة ' + esc(r.name) + '" width="960" height="720"><span class="tape">' + catOf(r) + '</span></div>' +
       '<div class="s-head"><h2 id="s-title">' + esc(r.name) + '</h2><p class="blurb">' + esc(r.blurb) + '</p>' +
       '<button class="btn savebtn" type="button" data-fav="' + r.id + '" aria-pressed="' + (S.favs[r.id] ? 'true' : 'false') + '">' + ICON.heart + '<span>' + (S.favs[r.id] ? 'محفوظة' : 'احفظ الوصفة') + '</span></button>' +
@@ -1087,7 +1366,7 @@ th,td{text-align:right}
   }
   function sauceSheetHtml(s) {
     var i = SAU.indexOf(s), prev = SAU[(i - 1 + SAU.length) % SAU.length], next = SAU[(i + 1) % SAU.length];
-    return '<button class="close" type="button" id="s-close" aria-label="أغلق الصوص">×</button>' +
+    return '<div class="sbar"><button class="close" type="button" id="s-close" aria-label="رجوع إلى الصوصات">' + ICON.back + '</button><b class="sbar-t">' + esc(s.name) + '</b></div>' +
       '<div class="s-top"><div class="s-pic"><img src="' + spic(s) + '" alt="صورة ' + esc(s.name) + ' ومكوّناته" width="960" height="720"><span class="tape">' + esc(s.group) + '</span></div>' +
       '<div class="s-head"><h2 id="s-title">' + esc(s.name) + '</h2><p class="blurb">' + esc(s.blurb) + '</p>' + rateHtml(SK + s.id) + '</div></div>' +
       '<div class="s-body">' +
@@ -1109,7 +1388,7 @@ th,td{text-align:right}
     if (!openId) lastFocus = document.activeElement;
     openId = id; openKind = kind;
     $('sheet-in').innerHTML = html;
-    $('sheet').hidden = false; $('sheet').scrollTop = 0; document.documentElement.style.overflow = 'hidden';
+    $('sheet').hidden = false; $('sheet').scrollTop = 0; $('sheet').classList.remove('scrolled'); document.documentElement.style.overflow = 'hidden';
     document.title = title + ' · Meal Prep';
     var c = $('s-close'); if (c) c.focus({ preventScroll: true });
   }
@@ -1146,11 +1425,22 @@ th,td{text-align:right}
     if (showView(VIEWS[h] ? h : 'recipes') && booted) window.scrollTo(0, 0);
     booted = true;
   }
-  function back() { location.hash = '#' + S.view; }
+  function back() { if (history.state && history.state.sheet) history.back(); else location.replace('#' + S.view); }
 
   // ---------- events
   document.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-cat],[data-chip],[data-level],[data-fav],[data-n],[data-scat],[data-star],[data-unrate],[data-tsort],#clear,#s-close,#s-copy');
+    // in-app links: a tab replaces the address (tapping the open tab scrolls it to the top), a recipe or a sauce is a new page in the history
+    var a = e.target.closest('a[href^="#"]');
+    if (a && !e.defaultPrevented && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
+      var h = a.getAttribute('href').slice(1);
+      if (VIEWS[h]) { e.preventDefault(); if (openId || h !== S.view) location.replace('#' + h); else window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+      if (byId[h] || (h.indexOf('sauce-') === 0 && bySauce[h.slice(6)])) {
+        e.preventDefault();
+        if (openId && a.closest('.pn')) history.replaceState(history.state, '', '#' + h); else history.pushState({ sheet: 1 }, '', '#' + h);
+        route(); return;
+      }
+    }
+    var t = e.target.closest('[data-cat],[data-chip],[data-level],[data-fav],[data-n],[data-scat],[data-star],[data-unrate],[data-tsort],#clear,#s-close,#s-copy,#fbtn');
     if (!t) { if (e.target === $('sheet')) back(); return; }
     if (t.dataset.cat) { S.cat = t.dataset.cat; sync(); renderGrid(); }
     else if (t.dataset.chip) { S[t.dataset.chip] = !S[t.dataset.chip]; sync(); renderGrid(); }
@@ -1163,6 +1453,7 @@ th,td{text-align:right}
     else if (t.dataset.tsort) { S.tsort = t.dataset.tsort; renderTried(); }
     else if (t.id === 'clear') { S.cat = 'all'; S.foodi = S.freeze = S.cold = S.quick = S.fav = S.untried = false; S.levels = {}; S.q = ''; $('q').value = ''; sync(); renderGrid(); }
     else if (t.id === 's-close') { back(); }
+    else if (t.id === 'fbtn') { var op = $('filters').hidden; $('filters').hidden = !op; t.setAttribute('aria-expanded', String(op)); }
     else if (t.id === 's-copy') {
       var txt = shoppingList(byId[openId], S.meals);
       try { navigator.clipboard.writeText(txt).then(function () { toast('نُسخت قائمة التسوّق'); }, function () { toast('النسخ غير متاح هنا. حدّد القائمة وانسخها بنفسك.'); }); } catch (err) { toast('النسخ غير متاح هنا. حدّد القائمة وانسخها بنفسك.'); }
@@ -1176,6 +1467,17 @@ th,td{text-align:right}
   $('sort').addEventListener('change', function () { S.sort = this.value; renderGrid(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && openId) back(); });
   window.addEventListener('hashchange', route);
+  $('sheet').addEventListener('scroll', function () { this.classList.toggle('scrolled', this.scrollTop > 260); }, { passive: true });
+  // the search and category bar sits right on the board, and takes a background of its own only once it sticks to the top
+  var bars = document.querySelectorAll('.tabsbar');
+  function stick() {
+    for (var i = 0; i < bars.length; i++) {
+      var b = bars[i];
+      b.classList.toggle('stuck', !!b.offsetParent && b.getBoundingClientRect().top <= (parseFloat(getComputedStyle(b).top) || 0) + 1);
+    }
+  }
+  window.addEventListener('scroll', stick, { passive: true });
+  window.addEventListener('hashchange', function () { setTimeout(stick, 0); });
 
   Array.prototype.forEach.call(document.querySelectorAll('img[data-pic]'), function (im) { if (PICS[im.dataset.pic]) im.src = PICS[im.dataset.pic]; });
   renderFacts(); renderControls(); renderGrid(); renderSauces(); renderTried(); route(); rtInit();

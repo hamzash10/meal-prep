@@ -7,8 +7,8 @@
  "start_url": "./",
  "scope": "./",
  "display": "standalone",
- "background_color": "#F2F1EC",
- "theme_color": "#F2F1EC",
+ "background_color": "#26272A",
+ "theme_color": "#26272A",
  "categories": [
   "food",
   "lifestyle"

@@ -4,10 +4,10 @@
 // and an unchanged one never is. In the installed app the page asks for all of them once ('warm').
 // Every file is checked against the hash it should have before it is kept, so a copy that is still
 // stale somewhere on the way (a cache, the CDN right after a change) is never stored as the new one.
-const VERSION = 'd75bb72805d0';
+const VERSION = '231922a6eebe';
 const CORE = {
-"index.html": "6f5ddbadb9",
-"data.js": "b5a167fe8a",
+"index.html": "5aa5df2747",
+"data.js": "8cc27f55ca",
 "credits.js": "a3e484977d",
 "manifest.webmanifest": "e8e22675ad",
 "icons/favicon-32.png": "f1b949d692",

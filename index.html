@@ -877,7 +877,7 @@ button,a,label{-webkit-tap-highlight-color:transparent}
         <li><b>خل الأرز.</b> الخلطات المتبّلة قد تحتوي على الميرين. اشترِ خل الأرز العادي، أو استخدم خل التفاح أو عصير الليمون.</li>
         <li><b>الخردل.</b> بعض خردل ديجون يُصنع بالنبيذ الأبيض. الخردل الأصفر العادي هو الخيار الأبسط.</li>
         <li><b>الهريسة وصلصة الفلفل الحار والصلصة الحارة.</b> لا مشكلة فيها غالبًا. ابحث عن علامة حلال.</li>
-        <li><b>المرق.</b> مرق الخضار يبسّط الأمر. افحص مكعبات المرق بحثًا عن علامة حلال.</li>
+        <li><b>المرق.</b> مرق الخضار يبسّط الأمر. افحص مكعبات المرق بحثًا عن علامة حلال. الوصفات محسوبة على مرق مملّح من مكعب أو عبوة، فإن كان مرقك بلا ملح أضف ربع ملعقة صغيرة ملح لكل 200 مل منه.</li>
         <li><b>الفيتا والموزاريلا والكوتج والشيدر والبارميزان والجبنة الكريمية.</b> بعضها يُصنع بمنفحة حيوانية، والبارميزان الإيطالي الأصلي دائمًا كذلك. ابحث عن علامة حلال أو علامة نباتي.</li>
         <li><b>السلمون المدخّن.</b> غالبًا سلمون وملح ودخان فقط، لكن بعض السلمون المتبّل (غرافلاكس) يُنقع بالكحول. اقرأ المكوّنات.</li>
       </ul>
@@ -989,14 +989,23 @@ button,a,label{-webkit-tap-highlight-color:transparent}
       return { t: r + (unit === 'g' ? ' غ' : ' مل') };
     }
     if (unit === 'tsp') {
-      // an eighth of a teaspoon is a pinch; rounding it up to a quarter would double the salt of a single meal
-      if (t < 0.19) return { t: 'رشة' };
+      // an eighth of a teaspoon is a generous pinch; rounding it up to a quarter would double the salt of a single meal.
+      // It is named apart from the plain pinch (a sixteenth), so the cook does not halve it
+      if (t < 0.1) return { t: 'رشة' };
+      if (t < 0.19) return { t: 'رشة كبيرة' };
       if (t >= 3) { f = frac(t / 3, t / 3 >= 3 ? 0.5 : 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة كبيرة', 'ملاعق كبيرة') }; }
       f = frac(t, 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة صغيرة', 'ملاعق صغيرة') };
     }
     if (unit === 'tbsp') { f = frac(t, t >= 4 ? 0.5 : 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة كبيرة', 'ملاعق كبيرة') }; }
     if (unit === 'pc' || unit === 'can') { f = frac(t, t >= 3 ? 0.5 : 0.25); return { t: f.t, many: f.v >= 3 && f.v < 11 }; }
-    if (unit === 'pinch') return { t: n >= 3 ? 'رشة كبيرة' : 'رشة' };
+    if (unit === 'pinch') {
+      // a pinch is about a sixteenth of a teaspoon, and it has to grow with the batch:
+      // seven meals need half a teaspoon, not one slightly bigger pinch
+      if (n <= 1) return { t: 'رشة' };
+      if (n === 2) return { t: 'رشتان' };
+      if (n === 3) return { t: '3 رشات' };
+      f = frac(n / 16, 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة صغيرة', 'ملاعق صغيرة') };
+    }
     return { t: '' };
   }
   function ingName(key, many) { var g = ING[key]; if (!g) return key; return Array.isArray(g.n) ? g.n[many ? 1 : 0] : g.n; }

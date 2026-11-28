@@ -870,6 +870,23 @@ button,a,label{-webkit-tap-highlight-color:transparent}
     </section>
 
     <section class="g">
+      <h2>كل شيء يُقاس</h2>
+      <p>لا رشّات ولا فصوص في هذا الكتاب. كل مقدار بالغرام أو بملاعق القياس، وهذا الجدول يساعدك وقت الشراء.</p>
+      <div class="tblwrap"><table>
+        <tr><th>ما تشتريه</th><th>ما يعطيه تقريبًا</th></tr>
+        <tr><td>فص ثوم متوسط</td><td><b>4 غ</b> بعد التقشير</td></tr>
+        <tr><td>بصلة متوسطة</td><td><b>110 غ</b></td></tr>
+        <tr><td>فلفلة حلوة</td><td><b>150 غ</b></td></tr>
+        <tr><td>عود بصل أخضر</td><td><b>15 غ</b></td></tr>
+        <tr><td>فلفلة حارة</td><td><b>10 غ</b></td></tr>
+        <tr><td>ليمونة</td><td><b>3 ملاعق كبيرة</b> عصير، وملعقة كبيرة قشر مبشور</td></tr>
+        <tr><td>ليمونة خضراء (لايم)</td><td><b>ملعقتان كبيرتان</b> عصير</td></tr>
+      </table></div>
+      <p class="muted">أصغر مقدار في الكتاب نصف ثُمن ملعقة صغيرة: املأ ملعقة القياس الصغرى (الثُمن) إلى نصفها. وحين تقرأ «ربع وثُمن» فهي ملعقة الربع ومعها ملعقة الثُمن، و«ثُمن ونصف ثُمن» ملعقة الثُمن ممتلئة ثم نصفها.</p>
+      <p>الماء المملّح لسلق المعكرونة والبطاطا: <b>ملعقة صغيرة ونصف ملح لكل لتر ماء</b>. أرز البرياني وحده يُسلق في ماء أملح، <b>ملعقة كبيرة لكل لتر</b>، لأنه يبقى فيه 5 دقائق فقط.</p>
+    </section>
+
+    <section class="g">
       <h2>راجع الملصق</h2>
       <p>لا شيء في هذا الكتاب فيه كحول أو لحم خنزير أو قشريات ومحار. لكن بعض المرطبانات والعبوات تستحق قراءة ملصقها قبل الشراء، وهي معلّمة بعبارة <b>راجع الملصق</b> في قوائم المكوّنات.</p>
       <ul class="checks">
@@ -989,23 +1006,19 @@ button,a,label{-webkit-tap-highlight-color:transparent}
       return { t: r + (unit === 'g' ? ' غ' : ' مل') };
     }
     if (unit === 'tsp') {
-      // an eighth of a teaspoon is a generous pinch; rounding it up to a quarter would double the salt of a single meal.
-      // It is named apart from the plain pinch (a sixteenth), so the cook does not halve it
-      if (t < 0.1) return { t: 'رشة' };
-      if (t < 0.19) return { t: 'رشة كبيرة' };
+      // nothing is left to "a pinch": the two smallest amounts are named after the eighth-teaspoon measure.
+      // Rounding them up to a quarter would double the salt of a single meal
+      if (t < 0.09) return { t: 'نصف ثُمن ملعقة صغيرة' };
+      if (t < 0.156) return { t: 'ثُمن ملعقة صغيرة' };
+      if (t < 0.219) return { t: 'ثُمن ونصف ثُمن ملعقة صغيرة' };
       if (t >= 3) { f = frac(t / 3, t / 3 >= 3 ? 0.5 : 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة كبيرة', 'ملاعق كبيرة') }; }
+      // under one teaspoon the amount keeps to the eighth: three eighths shown as a rounded half is a third more salt
+      if (t < 0.9375) { r = Math.round(t * 8); if (r === 3) return { t: 'ربع وثُمن ملعقة صغيرة' }; if (r === 5) return { t: 'نصف وثُمن ملعقة صغيرة' }; if (r === 7) return { t: 'ملعقة صغيرة إلا ثُمنًا' }; }
       f = frac(t, 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة صغيرة', 'ملاعق صغيرة') };
     }
     if (unit === 'tbsp') { f = frac(t, t >= 4 ? 0.5 : 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة كبيرة', 'ملاعق كبيرة') }; }
     if (unit === 'pc' || unit === 'can') { f = frac(t, t >= 3 ? 0.5 : 0.25); return { t: f.t, many: f.v >= 3 && f.v < 11 }; }
-    if (unit === 'pinch') {
-      // a pinch is about a sixteenth of a teaspoon, and it has to grow with the batch:
-      // seven meals need half a teaspoon, not one slightly bigger pinch
-      if (n <= 1) return { t: 'رشة' };
-      if (n === 2) return { t: 'رشتان' };
-      if (n === 3) return { t: '3 رشات' };
-      f = frac(n / 16, 0.25); return { t: f.t + ' ' + pl(f.v, 'ملعقة صغيرة', 'ملاعق صغيرة') };
-    }
+    if (unit === 'pinch') return amount(0.0625, 'tsp', n);   // the book no longer uses pinches; an old one is a sixteenth of a teaspoon per meal
     return { t: '' };
   }
   function ingName(key, many) { var g = ING[key]; if (!g) return key; return Array.isArray(g.n) ? g.n[many ? 1 : 0] : g.n; }
